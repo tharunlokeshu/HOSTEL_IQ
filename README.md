@@ -3,26 +3,43 @@
 A **next-gen full-stack hostel helpdesk system** built with Django, React, and MySQL — offering advanced complaint tracking, room change workflows, emergency reporting, and more — tailored for **students and admins** with secure, role-based dashboards.
 
 ---
+## 📸 UI Screenshots
 
-## 📸 Screenshots (Updated)
-###  Home Page
+### 🏠 Home Page
 ![Home Page](screenshots/home-page.png)
 
-### 🎓 Student Dashboard
+### 📝 Registration Page
+![Registration Page](screenshots/registration-page.png)
 
-### 🛠️ Admin Dashboard
+### 🔐 Login Page
+![Login Page](screenshots/login-page.png)
+
+### 🧑‍🎓 Student Dashboard
+![Student Dashboard](screenshots/student-dashboard.png)
+
+### 🛡️ Admin Dashboard
+![Admin Dashboard](screenshots/admin-dashboard.png)
 
 ### 📝 Submit Complaint
+![Submit Complaint](screenshots/submit-complaint.png)
 
-### 🚪 Room Change Request
+### 📄 View Complaints
+![View Complaints](screenshots/view-complaints.png)
 
-### 🩺 Medical Emergency Report
+### 🔄 Room Change Request
+![Room Change Request](screenshots/room-change.png)
 
-### 📤 Out Pass Request
+### 🏥 Medical Emergency Report
+![Medical Emergency Report](screenshots/medical.png)
 
-### 📦 Lost & Found
+### 🎒 Lost & Found
+![Lost & Found](screenshots/lost-found.png)
 
-### 📊 Export Reports
+### 🚪 Out Pass Request
+![Out Pass Request](screenshots/outpass.png)
+
+### 📤 Admin Data Export
+![Admin Data Export](screenshots/exports.png)
 
 ---
 
