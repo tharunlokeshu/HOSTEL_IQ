@@ -14,7 +14,7 @@ A **next-gen full-stack hostel helpdesk system** built with Django, React, and M
 ## 📸 Screenshots (Updated)
 
 ### 🎓 Student Dashboard
-
+"C:\Users\Tharun\OneDrive\รูปภาพ\Screenshots\Screenshot 2025-07-31 161835.png"
 ### 🛠️ Admin Dashboard
 
 ### 📝 Submit Complaint
