@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'users',
     'helpdesk',
+    "django_filters",
 ]
 
 MIDDLEWARE = [
