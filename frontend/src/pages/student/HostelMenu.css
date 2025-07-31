@@ -1,0 +1,85 @@
+/* Root Styling */
+.hostel-menu {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #f0faff;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Heading */
+.hostel-menu h2 {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  color: #00ffe7;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px #00ffe7, 0 0 30px #00ffe7;
+  animation: pulse-glow 2.5s infinite;
+}
+
+/* Grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  padding: 0 1rem;
+}
+
+/* Card */
+.menu-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.06);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.menu-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: #00ffe7;
+  box-shadow: 0 0 20px rgba(0, 255, 231, 0.5);
+}
+
+/* Day Title */
+.menu-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #ffcc70;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+/* Meal Info */
+.menu-card p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  line-height: 1.6;
+  color: #e0f7fa;
+}
+
+.menu-card p strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Glowing animation */
+@keyframes pulse-glow {
+  0% {
+    text-shadow: 0 0 8px #00ffe7;
+  }
+  50% {
+    text-shadow: 0 0 16px #00ffe7, 0 0 32px #00ffe7;
+  }
+  100% {
+    text-shadow: 0 0 8px #00ffe7;
+  }
+}

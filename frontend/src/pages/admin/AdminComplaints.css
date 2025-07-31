@@ -1,0 +1,187 @@
+/* AdminComplaints.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+.admin-complaints-page {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #121212, #1e1e2f);
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.admin-complaints-page h2 {
+  font-size: 2.6rem;
+  margin-bottom: 40px;
+  color: #26c6da; /* Replaced blue */
+  text-shadow:
+    0 0 10px #26c6da,
+    0 0 25px #00bcd4;
+  user-select: none;
+}
+
+.error {
+  background-color: #ff4c4c;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(255, 76, 76, 0.5);
+  max-width: 600px;
+  text-align: center;
+}
+
+.complaints-table {
+  width: 100%;
+  max-width: 1100px;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(30, 30, 47, 0.8);
+  backdrop-filter: blur(12px);
+}
+
+.complaints-table thead tr {
+  background: linear-gradient(90deg, #009688, #26c6da); /* Replaced blue gradient */
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  user-select: none;
+}
+
+.complaints-table thead th {
+  padding: 18px 24px;
+  text-align: left;
+}
+
+.complaints-table tbody tr {
+  background: #2a2a3f;
+  transition: background-color 0.25s ease;
+  cursor: default;
+  border-radius: 12px;
+}
+
+.complaints-table tbody tr:hover {
+  background: #3a3a5f;
+}
+
+.complaints-table tbody td {
+  padding: 16px 24px;
+  vertical-align: middle;
+  font-size: 1rem;
+  color: #cfd8dc;
+  position: relative;
+  word-break: break-word;
+}
+
+.complaints-table tbody td[data-label]::before {
+  content: attr(data-label);
+  display: none;
+  font-weight: 600;
+  color: #80deea; /* Replaced blue */
+  margin-right: 8px;
+  white-space: nowrap;
+}
+
+.resolved {
+  color: #00e676;
+  font-weight: 700;
+  text-transform: capitalize;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 10px #00e676a0;
+}
+
+.pending {
+  color: #fbc02d;
+  font-weight: 700;
+  text-transform: capitalize;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 10px #fbc02da0;
+}
+
+.resolve-btn {
+  background: linear-gradient(135deg, #00e676, #00c853);
+  color: #121212;
+  border: none;
+  padding: 10px 18px;
+  font-weight: 700;
+  border-radius: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  transition: box-shadow 0.3s ease, transform 0.15s ease;
+  user-select: none;
+  box-shadow: 0 5px 12px rgba(0, 230, 118, 0.6);
+}
+
+.resolve-btn:hover {
+  box-shadow: 0 8px 20px rgba(0, 230, 118, 0.9);
+  transform: translateY(-2px);
+}
+
+.resolve-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 8px rgba(0, 230, 118, 0.8);
+}
+
+.resolve-btn svg {
+  stroke: #121212;
+  stroke-width: 1.5;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .complaints-table thead {
+    display: none;
+  }
+
+  .complaints-table,
+  .complaints-table tbody,
+  .complaints-table tr,
+  .complaints-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .complaints-table tr {
+    margin-bottom: 20px;
+    background: #2a2a3f;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  }
+
+  .complaints-table td {
+    padding: 14px 20px;
+    text-align: right;
+    position: relative;
+    font-size: 1rem;
+  }
+
+  .complaints-table td[data-label]::before {
+    display: inline-block;
+    content: attr(data-label) ': ';
+    position: absolute;
+    left: 20px;
+    top: 14px;
+    font-weight: 700;
+    color: #26c6da; /* Replaced blue */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.85rem;
+  }
+
+  .resolve-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 14px 0;
+  }
+}

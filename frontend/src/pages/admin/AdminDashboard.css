@@ -1,0 +1,111 @@
+/* AdminDashboard.css - Unique Dark Futuristic Theme */
+
+.admin-dashboard {
+  min-height: 100vh;
+  padding: 3rem 2rem;
+  font-family: 'Orbitron', 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top left, #0d0d0d, #1a1a1a 70%, #000000);
+  color: #e0e0e0;
+  animation: fadeIn 1s ease-in;
+}
+
+.dashboard-heading {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  background: linear-gradient(90deg, #00ffe0, #bfcfe1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  letter-spacing: 1px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: linear-gradient(145deg, #1c1c1c, #131313);
+  border: 2px solid #2c2c2c;
+  border-radius: 20px;
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.1), transparent 70%);
+  transform: rotate(25deg);
+  pointer-events: none;
+  animation: rotateGlow 8s linear infinite;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  border-color: #00ffc8;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+}
+
+.card span {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #f0f0f0;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.4);
+}
+
+.card svg {
+  font-size: 2.5rem;
+  color: #00eaff;
+  filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.3));
+  transition: transform 0.3s ease;
+}
+
+.card:hover svg {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.8));
+}
+
+.logout {
+  background: linear-gradient(145deg, #2e0d0d, #1f0000);
+  border-color: #ff4d4d;
+}
+
+.logout:hover {
+  background: linear-gradient(145deg, #4d0f0f, #2e0000);
+  box-shadow: 0 0 30px rgba(255, 50, 50, 0.4);
+}
+
+@keyframes rotateGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.dashboard-heading {
+  font-size: 4rem;           /* Bigger heading text */
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 3.5rem;
+  color: #00eaff;
+  text-shadow: 0 4px 15px rgba(0, 217, 255, 0.5);
+}

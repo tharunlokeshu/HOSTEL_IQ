@@ -1,0 +1,110 @@
+/* Full page background */
+.medical-emergency-page {
+  background-color: #f2f2f2;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 40px 0;
+}
+
+/* Form container */
+.medical-emergency-container {
+  width: 100%;
+  max-width: 600px;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+  color: #111; /* Default text color */
+}
+
+/* Headings */
+.title {
+  text-align: center;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.sub-title {
+  margin-top: 30px;
+  color: #222;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 4px;
+}
+
+/* Alerts */
+.error {
+  color: #d63031;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.success {
+  color: #27ae60;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Form */
+.medical-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.medical-form input,
+.medical-form textarea,
+.medical-form select {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  background-color: #fff;
+  color: #111; /* Input text */
+}
+
+.medical-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.medical-form button {
+  background-color: #27ae60;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.medical-form button:hover {
+  background-color: #1e8449;
+}
+
+/* Report List */
+.no-reports {
+  text-align: center;
+  color: #777;
+  margin-top: 15px;
+}
+
+.report-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 15px;
+}
+
+.report-card {
+  background-color: #fff;
+  color: #111;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 4px solid #27ae60;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}

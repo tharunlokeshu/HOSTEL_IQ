@@ -1,0 +1,82 @@
+/* Reset + full-screen base */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #f2f2f2;
+  font-family: 'Segoe UI', sans-serif;
+  color: #000; /* Ensures text is dark black */
+}
+
+/* Container for Admin Lost & Found */
+.admin-lost-found-container {
+  min-height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+/* Title styling */
+.admin-lost-found-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 32px;
+  color: #111; /* dark black */
+}
+
+/* No items message */
+.no-items {
+  text-align: center;
+  font-size: 20px;
+  color: #555;
+  padding: 40px 0;
+}
+
+/* Individual item cards */
+.lost-item-card {
+  background: #fafafa;
+  padding: 24px;
+  margin-bottom: 24px;
+  border-left: 6px solid #444; /* dark neutral */
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease;
+  color: #000;
+}
+
+.lost-item-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Status change section */
+.status-section {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Dropdown */
+.status-section select {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+}
+
+/* Status labels */
+.claimed {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.pending {
+  color: #ff9800;
+  font-weight: 600;
+}

@@ -1,0 +1,80 @@
+.lostfound-container {
+  max-width: 750px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  color: #111; /* Base text color */
+}
+
+.lostfound-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #111;
+}
+
+.lostfound-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.lostfound-form input,
+.lostfound-form textarea {
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  resize: vertical;
+  background-color: #fff;
+  color: #111; /* Input text */
+  transition: border 0.3s ease;
+}
+
+.lostfound-form input:focus,
+.lostfound-form textarea:focus {
+  border-color: #444;
+  outline: none;
+}
+
+.lostfound-form button {
+  background-color: #1e1e1e;
+  color: #fff;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.lostfound-form button:hover {
+  background-color: #333;
+}
+
+.lostfound-list {
+  margin-top: 30px;
+}
+
+.lostfound-list h3 {
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+  color: #111;
+}
+
+.lostfound-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.lostfound-list li {
+  padding: 12px;
+  margin-bottom: 10px;
+  background-color: #f6f6f6;
+  color: #111;
+  border-left: 5px solid #1e1e1e;
+  border-radius: 8px;
+}

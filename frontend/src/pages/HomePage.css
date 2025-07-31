@@ -1,0 +1,153 @@
+.homepage {
+  background-image: url("C:\Users\Tharun\OneDrive\Desktop\hostel\Hostel\frontend\public\hostel-iq.jpeg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  color: #111;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.homepage-overlay {
+  background: rgba(255, 255, 255, 0.65);
+  min-height: 100vh;
+  backdrop-filter: blur(8px);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.homepage-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  background: #333;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: #000;
+  transform: translateY(-2px);
+}
+
+.secondary {
+  background: #22a746;
+}
+
+.secondary:hover {
+  background: #1b873b;
+}
+
+.hero {
+  text-align: center;
+  padding: 40px 0;
+  animation: fadeInUp 1s ease;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  padding: 14px 32px;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+.feature-section {
+  text-align: center;
+}
+
+.feature-section h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.feature-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.about-section {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.about-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.homepage-footer {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: auto;
+  color: #444;
+}
+
+/* Entry animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

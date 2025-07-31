@@ -1,0 +1,111 @@
+.notice-container {
+  padding: 40px;
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.notice-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #000; /* dark black */
+}
+
+.notice-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.notice-form input,
+.notice-form textarea {
+  padding: 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.3s ease;
+  color: #000; /* input text color */
+}
+
+.notice-form input:focus,
+.notice-form textarea:focus {
+  border-color: #6b7d8f;
+  outline: none;
+}
+
+.notice-form button {
+  padding: 14px;
+  font-size: 16px;
+  background: linear-gradient(135deg, #677380, #0056b3);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.notice-form button:hover {
+  background: linear-gradient(135deg, #0056b3, #003f7f);
+}
+
+.notice-form p {
+  text-align: center;
+  margin: 0;
+  font-size: 15px;
+  color: #000; /* dark black */
+}
+
+.notice-error {
+  color: hsl(0, 100%, 25%);
+}
+
+.notice-success {
+  color: hsl(140, 100%, 20%);
+}
+
+.notice-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.notice-list h3 {
+  margin-bottom: 16px;
+  font-size: 22px;
+  color: #000; /* dark black */
+}
+
+.notice-item {
+  background: #f9f9f9;
+  border-left: 5px solid #007bff;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  color: #000; /* dark black */
+}
+
+.notice-item strong {
+  color: #000;
+  font-size: 17px;
+}
+
+.notice-item p {
+  color: #000;
+  margin: 6px 0;
+  font-size: 15px;
+}
+
+.notice-item small {
+  color: #444;
+}
+
+/* Global background for entire app */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #2575fc, #2575fc);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #000; /* global black text */
+}

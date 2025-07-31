@@ -1,0 +1,130 @@
+/* MyProfile.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+.student-profile-page {
+  background: #121217;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
+  font-family: 'Inter', sans-serif;
+  color: #e0e0e0;
+  user-select: none;
+}
+
+.profile-card {
+  background: #1e2130;
+  border-radius: 24px;
+  box-shadow:
+    8px 8px 16px #161821,
+    -8px -8px 16px #292e44;
+  padding: 40px 50px;
+  width: 100%;
+  max-width: 520px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  box-shadow:
+    10px 10px 20px #15161f,
+    -10px -10px 20px #2d334a;
+}
+
+.profile-card h2 {
+  font-weight: 700;
+  font-size: 2.3rem;
+  margin-bottom: 35px;
+  color: #00bcd4;
+  text-shadow: 0 0 8px #00bcd4aa;
+}
+
+.profile-item {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.profile-item label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  color: #8f9bb3;
+  user-select: text;
+}
+
+.profile-item input {
+  padding: 12px 18px;
+  border-radius: 14px;
+  border: none;
+  background: #2a2e42;
+  color: #cbd5e1;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  box-shadow:
+    inset 5px 5px 10px #21253b,
+    inset -5px -5px 10px #343b56;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  outline-offset: 3px;
+}
+
+.profile-item input:focus:not(:disabled) {
+  background-color: #1f253e;
+  box-shadow:
+    inset 2px 2px 8px #13203a,
+    inset -2px -2px 8px #2f3860,
+    0 0 12px #00bcd4aa;
+  outline: none;
+  color: #e0f7fa;
+}
+
+.profile-item input:disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+
+.profile-buttons {
+  margin-top: 30px;
+}
+
+.edit-btn,
+.save-btn {
+  background: linear-gradient(135deg, #00bcd4, #008ba3);
+  border: none;
+  padding: 14px 38px;
+  border-radius: 28px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.15rem;
+  cursor: pointer;
+  box-shadow: 0 12px 25px rgba(0, 188, 212, 0.45);
+  transition: background 0.3s ease, transform 0.15s ease;
+  user-select: none;
+}
+
+.edit-btn:hover,
+.save-btn:hover {
+  background: linear-gradient(135deg, #008ba3, #00bcd4);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0, 188, 212, 0.7);
+}
+
+@media (max-width: 480px) {
+  .profile-card {
+    padding: 30px 25px;
+  }
+
+  .profile-item input {
+    font-size: 0.95rem;
+    padding: 10px 14px;
+  }
+
+  .edit-btn,
+  .save-btn {
+    width: 100%;
+    padding: 14px 0;
+  }
+}

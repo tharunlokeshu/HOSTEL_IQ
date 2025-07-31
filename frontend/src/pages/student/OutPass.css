@@ -1,0 +1,219 @@
+/* OutPass.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+.outpass-form-container {
+  max-width: 700px;
+  margin: 40px auto;
+  background: linear-gradient(135deg, #1a1a2e, #121212);
+  padding: 30px 35px;
+  border-radius: 18px;
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.7),
+    inset 0 0 15px rgba(255, 255, 255, 0.05);
+  font-family: 'Inter', sans-serif;
+  color: #e0e0e0;
+  user-select: none;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 28px;
+  color: #00bcd4;
+  text-shadow:
+    0 0 8px #00bcd4,
+    0 0 18px #00acc1;
+}
+
+.outpass-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-input {
+  background: #0f1620;
+  border: 2px solid #222c3a;
+  border-radius: 14px;
+  padding: 12px 18px;
+  font-size: 1rem;
+  color: #cbd5e1;
+  resize: vertical;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #00bcd4;
+  box-shadow: 0 0 12px #00bcd4aa;
+  outline: none;
+}
+
+textarea.form-input {
+  min-height: 100px;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.4;
+}
+
+.submit-button {
+  background: linear-gradient(45deg, #00bcd4, #008ba3);
+  color: #fff;
+  font-weight: 600;
+  padding: 14px 0;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 188, 212, 0.4);
+  transition: background 0.3s ease, transform 0.15s ease;
+  user-select: none;
+}
+
+.submit-button:hover {
+  background: linear-gradient(45deg, #008ba3, #00bcd4);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 188, 212, 0.6);
+}
+
+.form-message {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #4caf50; /* success green */
+  user-select: none;
+}
+
+.error-message {
+  margin-top: 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #ff5252; /* error red */
+  user-select: none;
+}
+
+/* OutPass Requests Table */
+.outpass-table {
+  width: 100%;
+  margin-top: 32px;
+  border-collapse: separate;
+  border-spacing: 0 14px;
+  background: rgba(30, 30, 47, 0.85);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  color: #cfd8dc;
+}
+
+.outpass-table thead tr {
+  background: linear-gradient(90deg, #2196f3, #64b5f6);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  user-select: none;
+}
+
+.outpass-table thead th {
+  padding: 16px 24px;
+  text-align: left;
+}
+
+.outpass-table tbody tr {
+  background: #2a2a3f;
+  transition: background-color 0.3s ease;
+  cursor: default;
+  border-radius: 12px;
+}
+
+.outpass-table tbody tr:hover {
+  background: #3a3a5f;
+}
+
+.outpass-table tbody td {
+  padding: 14px 24px;
+  vertical-align: middle;
+  font-size: 1rem;
+  word-break: break-word;
+  position: relative;
+}
+
+/* Status badges with color coding */
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-transform: capitalize;
+  user-select: none;
+  display: inline-block;
+  box-shadow: 0 0 8px #00000055;
+}
+
+/* Status colors */
+.status-badge.pending {
+  background-color: #f9a825;
+  color: #fff;
+  text-shadow: 0 0 6px #f9a825cc;
+}
+
+.status-badge.approved {
+  background-color: #4caf50;
+  color: #fff;
+  text-shadow: 0 0 6px #4caf50cc;
+}
+
+.status-badge.rejected {
+  background-color: #f44336;
+  color: #fff;
+  text-shadow: 0 0 6px #f44336cc;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .outpass-form-container {
+    margin: 20px 15px;
+    padding: 25px 20px;
+  }
+
+  .form-title {
+    font-size: 1.6rem;
+  }
+
+  .outpass-table thead {
+    display: none;
+  }
+
+  .outpass-table,
+  .outpass-table tbody,
+  .outpass-table tr,
+  .outpass-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .outpass-table tr {
+    margin-bottom: 18px;
+    background: #2a2a3f;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+  }
+
+  .outpass-table td {
+    padding: 14px 20px;
+    text-align: right;
+    position: relative;
+    font-size: 1rem;
+  }
+
+  .outpass-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 20px;
+    top: 14px;
+    font-weight: 700;
+    color: #64b5f6;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.85rem;
+  }
+}

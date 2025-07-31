@@ -1,0 +1,99 @@
+.my-complaints {
+  min-height: 100vh;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #f0f0f0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.my-complaints h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #00ffc3;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.my-complaints p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #cccccc;
+  margin-top: 40px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+}
+
+li {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 6px 30px rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+li:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 40px rgba(0, 255, 255, 0.3);
+}
+
+li strong {
+  display: block;
+  font-size: 1.3rem;
+  color: #00ffe0;
+  margin-bottom: 10px;
+}
+
+li::before {
+  content: '📝 ';
+  font-size: 1.2rem;
+}
+
+li::after {
+  content: attr(data-status);
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #444;
+  color: #fff;
+}
+
+li[data-status='Pending']::after {
+  background-color: #cc4444;
+  color: #fff0f0;
+}
+
+li[data-status='In Progress']::after {
+  background-color: #f0ad4e;
+  color: #fff9e6;
+}
+
+li[data-status='Resolved']::after {
+  background-color: #1f8a70;
+  color: #d4fff4;
+}
+
+
+
+li[data-status='Pending']::after {
+  background-color: #ffd700;
+  color: #222222;
+}
+
+li[data-status='Resolved']::after {
+  background-color: #00ff88;
+  color: #0c0c0c;
+}

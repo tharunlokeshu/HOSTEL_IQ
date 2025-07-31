@@ -1,0 +1,127 @@
+/* RoomChange.css */
+
+.room-change-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 12px;
+  box-shadow: 0 0 15px hsla(0, 0%, 0%, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  color: hsl(0, 0%, 10%); /* Dark black text */
+}
+
+.room-change-title {
+  text-align: center;
+  font-size: 28px;
+  color: hsl(0, 0%, 10%);
+  margin-bottom: 25px;
+}
+
+.success-message {
+  background-color: hsl(140, 70%, 90%);
+  color: hsl(140, 40%, 20%);
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.error-message {
+  background-color: hsl(0, 70%, 95%);
+  color: hsl(0, 50%, 30%);
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.room-change-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.room-change-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: hsl(0, 0%, 10%);
+}
+
+.room-change-form input,
+.room-change-form textarea {
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid hsl(0, 0%, 80%);
+  font-size: 15px;
+  resize: vertical;
+  color: hsl(0, 0%, 10%);
+  background-color: hsl(0, 0%, 100%);
+}
+
+.room-change-form textarea {
+  min-height: 80px;
+}
+
+.submit-button {
+  background-color: hsl(0, 0%, 10%);
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: hsl(0, 0%, 20%);
+}
+
+.room-change-history {
+  margin-top: 40px;
+}
+
+.room-change-history h3 {
+  margin-bottom: 20px;
+  color: hsl(0, 0%, 10%);
+}
+
+.no-history {
+  font-style: italic;
+  color: hsl(0, 0%, 50%);
+}
+
+.history-card {
+  display: flex;
+  justify-content: space-between;
+  background-color: hsl(0, 0%, 98%);
+  border: 1px solid hsl(0, 0%, 85%);
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px hsla(0, 0%, 0%, 0.05);
+  color: hsl(0, 0%, 10%);
+}
+
+.status {
+  text-align: right;
+  font-weight: 600;
+}
+
+.status.pending {
+  color: hsl(45, 90%, 45%);
+}
+
+.status.in_progress {
+  color: hsl(220, 70%, 55%);
+}
+
+.status.resolved {
+  color: hsl(140, 60%, 45%);
+}
+
+.date {
+  font-size: 0.9em;
+  color: hsl(0, 0%, 40%);
+}
