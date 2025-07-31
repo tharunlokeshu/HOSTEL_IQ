@@ -2,8 +2,6 @@
 
 A **next-gen full-stack hostel helpdesk system** built with Django, React, and MySQL — offering advanced complaint tracking, room change workflows, emergency reporting, and more — tailored for **students and admins** with secure, role-based dashboards.
 
-![Hostel IQ Banner](https://user-images.githubusercontent.com/yourusername/banner_hostel_iq.png)
-
 ---
 
 ## 🔗 Live Demo
@@ -17,35 +15,19 @@ A **next-gen full-stack hostel helpdesk system** built with Django, React, and M
 
 ### 🎓 Student Dashboard
 
-![Student Dashboard](https://user-images.githubusercontent.com/yourusername/screenshots/new_student_dashboard.png)
-
 ### 🛠️ Admin Dashboard
-
-![Admin Dashboard](https://user-images.githubusercontent.com/yourusername/screenshots/new_admin_dashboard.png)
 
 ### 📝 Submit Complaint
 
-![Submit Complaint](https://user-images.githubusercontent.com/yourusername/screenshots/new_submit_complaint.png)
-
 ### 🚪 Room Change Request
-
-![Room Change](https://user-images.githubusercontent.com/yourusername/screenshots/new_room_change.png)
 
 ### 🩺 Medical Emergency Report
 
-![Medical Emergency](https://user-images.githubusercontent.com/yourusername/screenshots/new_medical_emergency.png)
-
 ### 📤 Out Pass Request
-
-![Out Pass](https://user-images.githubusercontent.com/yourusername/screenshots/new_outpass.png)
 
 ### 📦 Lost & Found
 
-![Lost & Found](https://user-images.githubusercontent.com/yourusername/screenshots/new_lost_found.png)
-
 ### 📊 Export Reports
-
-![Export Reports](https://user-images.githubusercontent.com/yourusername/screenshots/new_export_reports.png)
 
 ---
 
@@ -167,15 +149,35 @@ password: admin123
 * 🔔 Push Notifications for complaint updates
 * 📱 Mobile App (React Native)
 * 🤖 AI-powered Chatbot for instant help
-* 📊 Dynamic charts & filters in Admin Dashboard
-* 🪪 QR code for student entry/exit logs
 * 🔁 API versioning for stability
 
 ---
 
 ## 📃 License
 
-Licensed under the **MIT License**.
+This project is licensed under the **MIT License**.
+
+> MIT License
+>
+> Copyright (c) 2025 Tharun Lokesh
+>
+> Permission is hereby granted, free of charge, to any person obtaining a copy
+> of this software and associated documentation files (the "Software"), to deal
+> in the Software without restriction, including without limitation the rights
+> to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+> copies of the Software, and to permit persons to whom the Software is
+> furnished to do so, subject to the following conditions:
+>
+> The above copyright notice and this permission notice shall be included in all
+> copies or substantial portions of the Software.
+>
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+> IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+> FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+> AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+> LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+> OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+> SOFTWARE.
 
 ---
 
@@ -192,4 +194,3 @@ Licensed under the **MIT License**.
 If this project helped you, star ⭐ it, fork 🍴 it, or share it 💬 with your friends!
 
 ---
-
