@@ -2,6 +2,11 @@
 
 A **next-gen full-stack hostel helpdesk system** built with Django, React, and MySQL — offering advanced complaint tracking, room change workflows, emergency reporting, and more — tailored for **students and admins** with secure, role-based dashboards.
 
+## 📽️ Demo Video
+
+[📥 Click here to watch the Demo Video](screenshots/Demo%20Video.mp4)
+
+
 ---
 ## 📸 UI Screenshots
 
