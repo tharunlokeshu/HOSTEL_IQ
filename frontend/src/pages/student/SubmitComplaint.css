@@ -132,3 +132,58 @@ html, body {
     font-size: 1.8rem;
   }
 }
+
+
+.submit-complaint {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.submit-complaint h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.submit-complaint form {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit-complaint input,
+.submit-complaint textarea,
+.submit-complaint select {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.submit-complaint button {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.submit-complaint button:hover {
+  background-color: #45a049;
+}
+
+.success {
+  color: green;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
