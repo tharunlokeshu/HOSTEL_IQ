@@ -8,7 +8,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Security
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "django-insecure-default-secret")
 DEBUG = os.environ.get("DEBUG", "False") == "True"
-ALLOWED_HOSTS = ['https://pragati-hostel.onrender.com/', 'localhost', '127.0.0.1']  # You can restrict this to your Render or Vercel URLs later
+
+# ✅ Allowed hosts (no https/http, only domain names or IPs)
+ALLOWED_HOSTS = [
+    "pragati-hostel.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
+
+# ✅ CSRF Trusted Origins (for HTTPS frontends / APIs)
+CSRF_TRUSTED_ORIGINS = [
+    "https://pragati-hostel.onrender.com",
+    "https://your-frontend-domain.vercel.app",  # replace with your Vercel frontend domain
+]
 
 # Applications
 INSTALLED_APPS = [
@@ -39,8 +51,13 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-# CORS
-CORS_ALLOW_ALL_ORIGINS = True
+# ✅ CORS settings
+CORS_ALLOW_ALL_ORIGINS = False  # safer than True
+CORS_ALLOWED_ORIGINS = [
+    "https://pragati-hostel.onrender.com",
+    "https://your-frontend-domain.vercel.app",  # replace with frontend domain
+    "http://localhost:3000",  # for local React dev
+]
 
 # URL configuration
 ROOT_URLCONF = "hostel_backend.urls"
