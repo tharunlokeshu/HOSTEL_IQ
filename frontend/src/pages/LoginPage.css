@@ -1,68 +1,182 @@
+/* ===================== */
+/* HOMEPAGE GLOBAL STYLE */
+/* ===================== */
 
-
-/* Card container for login forms */
-.login-container {
-  background: rgba(255, 255, 255, 0.85);
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: center;
-  max-width: 900px;
-  width: 100%;
-}
-
-/* Forms */
-.login-form {
-  flex: 1 1 300px;
+.homepage {
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  color: #111;
   display: flex;
   flex-direction: column;
-  gap: 15px;
 }
 
-.login-form h2 {
-  text-align: center;
-  margin-bottom: 10px;
+.homepage-overlay {
+  background: rgba(255, 255, 255, 0.65);
+  min-height: 100vh;
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
 }
 
-.login-form input {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  font-size: 1rem;
-  transition: border 0.2s ease, box-shadow 0.2s ease;
+/* ===================== */
+/* NAVBAR */
+/* ===================== */
+.homepage-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-wrap: wrap; /* ✅ allows wrapping on smaller screens */
 }
 
-.login-form input:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
-}
-
-/* Buttons */
-.login-form button {
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #007bff, #0056b3);
-  color: white;
-  font-size: 1rem;
+.logo {
+  font-size: 1.5rem;
   font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.3s ease;
 }
 
-.login-form button:hover {
-  transform: scale(1.05);
-  background: linear-gradient(135deg, #0056b3, #004080);
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap; /* ✅ makes buttons wrap on small devices */
 }
 
-/* Error messages */
-.error {
-  color: red;
-  text-align: center;
+.nav-btn {
+  text-decoration: none;
+  background: #111;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  transition: background 0.3s;
   font-size: 0.9rem;
-  font-weight: 500;
+}
+
+.nav-btn.secondary {
+  background: #f44336;
+}
+
+.nav-btn:hover {
+  background: #333;
+}
+
+/* ===================== */
+/* HERO SECTION */
+/* ===================== */
+.hero {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  background: #007bff;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background: #0056b3;
+}
+
+/* ===================== */
+/* FEATURE SECTION */
+/* ===================== */
+.feature-section {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.feature-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-size: 0.9rem;
+}
+
+/* ===================== */
+/* ABOUT SECTION */
+/* ===================== */
+.about-section {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.about-section p {
+  max-width: 600px;
+  margin: auto;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ===================== */
+/* FOOTER */
+/* ===================== */
+.homepage-footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  margin-top: auto;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* ===================== */
+/* RESPONSIVE DESIGN */
+/* ===================== */
+@media (max-width: 768px) {
+  .homepage-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-grid {
+    grid-template-columns: 1fr; /* ✅ One card per row on small screens */
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-btn {
+    width: 100%;
+    text-align: center;
+  }
 }
