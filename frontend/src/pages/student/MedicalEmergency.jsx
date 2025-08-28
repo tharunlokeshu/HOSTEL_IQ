@@ -27,7 +27,7 @@ export default function MedicalEmergency() {
     setSuccess('');
     try {
       await axios.post(
-        'http://localhost:8000/api/helpdesk/medical-emergency/create/',
+        'https://pragati-hostel.onrender.com/api/helpdesk/medical-emergency/create/',
         formData,
         { headers: { Authorization: `Bearer ${accessToken}` } }
       );
@@ -42,7 +42,7 @@ export default function MedicalEmergency() {
 
   const fetchMyReports = async () => {
     try {
-      const res = await axios.get('http://localhost:8000/api/helpdesk/medical-emergency/my/', {
+      const res = await axios.get('https://pragati-hostel.onrender.com/api/helpdesk/medical-emergency/my/', {
         headers: { Authorization: `Bearer ${accessToken}` }
       });
       setReports(res.data);

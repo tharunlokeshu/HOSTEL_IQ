@@ -17,7 +17,7 @@ export default function AdminViewComplaints() {
     }
 
     try {
-      const res = await axios.get('http://127.0.0.1:8000/api/helpdesk/admin/complaints/', {
+      const res = await axios.get('https://pragati-hostel.onrender.com/api/helpdesk/admin/complaints/', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -49,7 +49,7 @@ export default function AdminViewComplaints() {
 
     try {
       await axios.patch(
-        `http://127.0.0.1:8000/api/helpdesk/admin/complaints/${id}/`,
+        `https://pragati-hostel.onrender.com/api/helpdesk/admin/complaints/${id}/`,
         { status: 'resolved' },
         {
           headers: {

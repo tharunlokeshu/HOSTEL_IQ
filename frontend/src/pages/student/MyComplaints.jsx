@@ -14,7 +14,7 @@ export default function MyComplaints() {
         return;
       }
 
-      const response = await axios.get('http://127.0.0.1:8000/api/helpdesk/my-history/', {
+      const response = await axios.get('https://pragati-hostel.onrender.com/api/helpdesk/my-history/', {
         headers: {
           Authorization: `Bearer ${token}`,
         },

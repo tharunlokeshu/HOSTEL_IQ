@@ -11,7 +11,7 @@ export default function CreateNotice() {
 
   const fetchNotices = async () => {
     try {
-      const res = await axios.get('http://localhost:8000/api/helpdesk/notices/');
+      const res = await axios.get('https://pragati-hostel.onrender.com/api/helpdesk/notices/');
       setNotices(res.data.reverse()); // newest first
     } catch (err) {
       console.error('Error fetching notices:', err);
@@ -35,7 +35,7 @@ export default function CreateNotice() {
 
     try {
       await axios.post(
-        'http://localhost:8000/api/helpdesk/notices/create/',
+        'https://pragati-hostel.onrender.com/api/helpdesk/notices/create/',
         { title, message },
         {
           headers: {

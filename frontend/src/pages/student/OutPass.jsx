@@ -25,7 +25,7 @@ const SubmitOutPass = () => {
       if (!refreshToken) throw new Error("No refresh token found");
 
       const response = await axios.post(
-        "http://localhost:8000/api/auth/token/refresh/",
+        "https://pragati-hostel.onrender.com/api/auth/token/refresh/",
         { refresh: refreshToken }
       );
 
@@ -41,7 +41,7 @@ const SubmitOutPass = () => {
   const fetchOutPasses = async (token) => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/helpdesk/out-pass/my/",
+        "https://pragati-hostel.onrender.com/api/helpdesk/out-pass/my/",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -83,7 +83,7 @@ const SubmitOutPass = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/helpdesk/out-pass/",
+        "https://pragati-hostel.onrender.com/api/helpdesk/out-pass/",
         formData,
         {
           headers: {
@@ -109,7 +109,7 @@ const SubmitOutPass = () => {
         if (newToken) {
           try {
             const retryRes = await axios.post(
-              "http://localhost:8000/api/helpdesk/out-pass/",
+              "https://pragati-hostel.onrender.com/api/helpdesk/out-pass/",
               formData,
               {
                 headers: {

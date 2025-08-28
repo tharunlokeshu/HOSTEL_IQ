@@ -12,7 +12,7 @@ export default function AdminLostFound() {
 
   const fetchLostItems = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/helpdesk/admin/lost-found/', {
+      const response = await axios.get('https://pragati-hostel.onrender.com/api/helpdesk/admin/lost-found/', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -28,7 +28,7 @@ export default function AdminLostFound() {
 
     try {
       await axios.put(
-        `http://localhost:8000/api/helpdesk/admin/lost-found/${itemId}/update/`,
+        `https://pragati-hostel.onrender.com/api/helpdesk/admin/lost-found/${itemId}/update/`,
         {
           item_name: itemToUpdate.item_name,
           description: itemToUpdate.description,

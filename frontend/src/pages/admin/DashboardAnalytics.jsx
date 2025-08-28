@@ -15,7 +15,7 @@ export default function AdminDashboardAnalytics() {
       }
 
       try {
-        const response = await axios.get('http://localhost:8000/api/helpdesk/admin/dashboard-analytics/', {
+        const response = await axios.get('https://pragati-hostel.onrender.com/api/helpdesk/admin/dashboard-analytics/', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

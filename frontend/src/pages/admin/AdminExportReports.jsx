@@ -8,7 +8,7 @@ export default function ExportReports() {
   const exportReport = async (endpoint, filename) => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/helpdesk/admin/${endpoint}/export/`,
+        `https://pragati-hostel.onrender.com/api/helpdesk/admin/${endpoint}/export/`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

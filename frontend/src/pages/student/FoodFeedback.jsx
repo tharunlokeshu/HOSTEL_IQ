@@ -31,7 +31,7 @@ const MessFeedback = () => {
 
     setSubmitting(true);
     try {
-      await axios.post('http://localhost:8000/api/helpdesk/mess-feedback/', formData);
+      await axios.post('https://pragati-hostel.onrender.com/api/helpdesk/mess-feedback/', formData);
       toast.success('Feedback submitted successfully!');
       setFormData({ full_name: '', roll_number: '', rating: 0, comments: '' });
     } catch (err) {

@@ -1,5 +1,5 @@
 .homepage {
-  background-image: url("C:\Users\Tharun\OneDrive\Desktop\hostel\Hostel\frontend\public\hostel-iq.jpeg");
+  /* Removed background-image */
   background-size: cover;
   background-position: center;
   min-height: 100vh;
@@ -145,7 +145,6 @@
     opacity: 0;
     transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);

@@ -4,7 +4,10 @@ import './HomePage.css';
 
 export default function HomePage() {
   return (
-    <div className="homepage">
+    <div 
+      className="homepage" 
+      style={{ backgroundImage: 'url("/hostel-iq.jpeg")' }}  // ✅ Directly from public folder
+    >
       <div className="homepage-overlay">
         <nav className="homepage-nav">
           <h1 className="logo">🏠 Hostel IQ</h1>

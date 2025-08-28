@@ -8,7 +8,7 @@ const StudentNotices = () => {
   const fetchNotices = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:8000///api/helpdesk/notices/');
+      const response = await axios.get('https://pragati-hostel.onrender.com///api/helpdesk/notices/');
       setNotices(response.data);
     } catch (error) {
       console.error('Failed to fetch notices:', error);

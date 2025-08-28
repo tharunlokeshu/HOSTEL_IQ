@@ -18,7 +18,7 @@ export default function LostFound() {
       return;
     }
 
-    axios.get('http://localhost:8000/api/helpdesk/student/lost-found/list/', {
+    axios.get('https://pragati-hostel.onrender.com/api/helpdesk/student/lost-found/list/', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -41,7 +41,7 @@ export default function LostFound() {
     e.preventDefault();
     const token = localStorage.getItem('studentToken');
     try {
-      await axios.post('http://localhost:8000/api/helpdesk/student/lost-found/', formData, {
+      await axios.post('https://pragati-hostel.onrender.com/api/helpdesk/student/lost-found/', formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -49,7 +49,7 @@ export default function LostFound() {
       alert('Lost & Found item submitted!');
       setFormData({ item_name: '', description: '', location_found: '' });
 
-      const res = await axios.get('http://localhost:8000/api/helpdesk/student/lost-found/list/', {
+      const res = await axios.get('https://pragati-hostel.onrender.com/api/helpdesk/student/lost-found/list/', {
         headers: {
           Authorization: `Bearer ${token}`,
         },

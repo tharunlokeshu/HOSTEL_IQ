@@ -9,7 +9,7 @@ const AdminMedicalEmergencies = () => {
   const fetchEmergencies = async () => {
     try {
       const token = localStorage.getItem('adminToken');
-      const res = await axios.get('http://localhost:8000/api/helpdesk/admin/medical-emergency/', {
+      const res = await axios.get('https://pragati-hostel.onrender.com/api/helpdesk/admin/medical-emergency/', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -25,7 +25,7 @@ const AdminMedicalEmergencies = () => {
     try {
       const token = localStorage.getItem('adminToken');
       await axios.patch(
-        'http://localhost:8000/api/helpdesk/admin/medical-emergency/',
+        'https://pragati-hostel.onrender.com/api/helpdesk/admin/medical-emergency/',
         { id, status: newStatus },
         {
           headers: {

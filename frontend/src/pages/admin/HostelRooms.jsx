@@ -15,7 +15,7 @@ export default function AdminRoomChangeRequests() {
 
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/helpdesk/admin/room-change/",
+        "https://pragati-hostel.onrender.com/api/helpdesk/admin/room-change/",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -48,7 +48,7 @@ export default function AdminRoomChangeRequests() {
 
     try {
       await axios.patch(
-        `http://localhost:8000/api/helpdesk/admin/room-change/${id}/`,
+        `https://pragati-hostel.onrender.com/api/helpdesk/admin/room-change/${id}/`,
         {
           status: update.status,
           admin_comment: update.admin_comment || "",

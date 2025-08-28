@@ -5,7 +5,7 @@ const AdminViewFeedback = () => {
   const [feedbacks, setFeedbacks] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/helpdesk/mess-feedback/all/")
+    fetch("https://pragati-hostel.onrender.com/api/helpdesk/mess-feedback/all/")
       .then((res) => res.json())
       .then((data) => setFeedbacks(data))
       .catch((err) => console.error("Error fetching feedbacks:", err));

@@ -20,7 +20,7 @@ export default function RegisterPage() {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/auth/register/', {
+      const response = await axios.post('https://pragati-hostel.onrender.com/api/auth/register/', {
         ...data,
         is_admin: false,
       });
@@ -46,18 +46,40 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="auth-page">
-      <h1 className="auth-title">Student Registration</h1>
-      <div className="register-container">
+    <div
+      style={{
+        backgroundImage: 'url("/hostel-iq.jpeg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontFamily: 'Segoe UI, sans-serif',
+      }}
+    >
+      <div
+        style={{
+          background: 'rgba(255, 255, 255, 0.85)',
+          padding: '40px',
+          borderRadius: '20px',
+          boxShadow: '0 10px 25px rgba(0,0,0,0.3)',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '20px',
+          maxWidth: '400px',
+          width: '100%',
+        }}
+      >
+        <h1 style={{ textAlign: 'center' }}>Student Registration</h1>
+
         <form
-          className="register-section"
           onSubmit={(e) => {
             e.preventDefault();
             handleRegister(studentData, setStudentError, setLoadingStudent);
           }}
+          style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}
         >
-          <h2>Register as Student</h2>
-
           {studentError && <div className="error">{studentError}</div>}
 
           <input

@@ -20,7 +20,7 @@ export default function SubmitComplaint() {
     const refresh = localStorage.getItem('refresh');
     if (!refresh) return null;
     try {
-      const res = await axios.post('http://127.0.0.1:8000/api/token/refresh/', { refresh });
+      const res = await axios.post('https://pragati-hostel.onrender.com/api/token/refresh/', { refresh });
       localStorage.setItem('access', res.data.access);
       return res.data.access;
     } catch (err) {
@@ -31,7 +31,7 @@ export default function SubmitComplaint() {
 
   const submitComplaint = async (token) => {
     return axios.post(
-      'http://127.0.0.1:8000/api/helpdesk/submit/',
+      'https://pragati-hostel.onrender.com/api/helpdesk/submit/',
       formData,
       {
         headers: {

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:8000/api",
+  baseURL: "https://pragati-hostel.onrender.com/api",
 });
 
 api.interceptors.request.use((config) => {
@@ -60,7 +60,7 @@ api.interceptors.response.use(
       }
 
       try {
-        const res = await axios.post("http://localhost:8000/api/token/refresh/", {
+        const res = await axios.post("https://pragati-hostel.onrender.com/api/token/refresh/", {
           refresh: refreshToken,
         });
 

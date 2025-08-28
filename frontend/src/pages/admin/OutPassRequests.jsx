@@ -13,7 +13,7 @@ const AdminOutPassRequests = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/helpdesk/out-pass/all/",
+        "https://pragati-hostel.onrender.com/api/helpdesk/out-pass/all/",
         {
           headers: { Authorization: `Bearer ${accessToken}` },
         }
@@ -44,7 +44,7 @@ const AdminOutPassRequests = () => {
     if (!refreshToken) return false;
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/auth/token/refresh/",
+        "https://pragati-hostel.onrender.com/api/auth/token/refresh/",
         { refresh: refreshToken }
       );
       localStorage.setItem("adminToken", response.data.access);
@@ -64,7 +64,7 @@ const AdminOutPassRequests = () => {
 
     try {
       await axios.patch(
-        `http://localhost:8000/api/helpdesk/out-pass/${id}/`,
+        `https://pragati-hostel.onrender.com/api/helpdesk/out-pass/${id}/`,
         { status: newStatus },
         {
           headers: { Authorization: `Bearer ${accessToken}` },

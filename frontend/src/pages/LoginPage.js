@@ -14,7 +14,7 @@ export default function LoginPage() {
     e.preventDefault();
     setAdminError('');
     try {
-      const res = await axios.post('http://127.0.0.1:8000/api/auth/login/', adminData);
+      const res = await axios.post('https://pragati-hostel.onrender.com/api/auth/login/', adminData);
       const { access, refresh, is_admin, username } = res.data;
 
       if (is_admin) {
@@ -34,7 +34,7 @@ export default function LoginPage() {
     e.preventDefault();
     setStudentError('');
     try {
-      const res = await axios.post('http://127.0.0.1:8000/api/auth/login/', studentData);
+      const res = await axios.post('https://pragati-hostel.onrender.com/api/auth/login/', studentData);
       const { access, refresh, is_admin, username } = res.data;
 
       if (!is_admin) {
@@ -51,52 +51,89 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="login-page">
-      <div className="login-overlay">
-        <h1 className="title">Welcome to Hostel IQ Portal</h1>
-        <div className="login-wrapper">
-          {/* Admin Login */}
-          <form className="login-card" onSubmit={handleAdminLogin}>
-            <h2>Admin Login</h2>
-            {adminError && <p className="error">{adminError}</p>}
-            <input
-              type="text"
-              placeholder="Username"
-              value={adminData.username}
-              onChange={(e) => setAdminData({ ...adminData, username: e.target.value })}
-              required
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              value={adminData.password}
-              onChange={(e) => setAdminData({ ...adminData, password: e.target.value })}
-              required
-            />
-            <button type="submit">Login</button>
-          </form>
+    <div
+      style={{
+        backgroundImage: `url(${process.env.PUBLIC_URL}/hostel-iq.jpeg)`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontFamily: 'Segoe UI, sans-serif',
+      }}
+    >
+      <div
+        style={{
+          background: 'rgba(255, 255, 255, 0.85)',
+          padding: '40px',
+          borderRadius: '20px',
+          boxShadow: '0 10px 25px rgba(0,0,0,0.3)',
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '40px',
+          justifyContent: 'center',
+          maxWidth: '900px',
+          width: '100%',
+        }}
+      >
+        {/* Admin Login */}
+        <form
+          onSubmit={handleAdminLogin}
+          style={{
+            flex: '1 1 300px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '15px',
+          }}
+        >
+          <h2 style={{ textAlign: 'center' }}>Admin Login</h2>
+          {adminError && <p className="error">{adminError}</p>}
+          <input
+            type="text"
+            placeholder="Username"
+            value={adminData.username}
+            onChange={(e) => setAdminData({ ...adminData, username: e.target.value })}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={adminData.password}
+            onChange={(e) => setAdminData({ ...adminData, password: e.target.value })}
+            required
+          />
+          <button type="submit">Login</button>
+        </form>
 
-          {/* Student Login */}
-          <form className="login-card" onSubmit={handleStudentLogin}>
-            <h2>Student Login</h2>
-            {studentError && <p className="error">{studentError}</p>}
-            <input
-              type="text"
-              placeholder="Username"
-              value={studentData.username}
-              onChange={(e) => setStudentData({ ...studentData, username: e.target.value })}
-              required
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              value={studentData.password}
-              onChange={(e) => setStudentData({ ...studentData, password: e.target.value })}
-              required
-            />
-            <button type="submit">Login</button>
-          </form>
-        </div>
+        {/* Student Login */}
+        <form
+          onSubmit={handleStudentLogin}
+          style={{
+            flex: '1 1 300px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '15px',
+          }}
+        >
+          <h2 style={{ textAlign: 'center' }}>Student Login</h2>
+          {studentError && <p className="error">{studentError}</p>}
+          <input
+            type="text"
+            placeholder="Username"
+            value={studentData.username}
+            onChange={(e) => setStudentData({ ...studentData, username: e.target.value })}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={studentData.password}
+            onChange={(e) => setStudentData({ ...studentData, password: e.target.value })}
+            required
+          />
+          <button type="submit">Login</button>
+        </form>
       </div>
     </div>
   );

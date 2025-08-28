@@ -29,7 +29,7 @@ export default function RoomChange() {
 
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/helpdesk/room-change/my-requests/",
+        "https://pragati-hostel.onrender.com/api/helpdesk/room-change/my-requests/",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -52,7 +52,7 @@ export default function RoomChange() {
 
     try {
       await axios.post(
-        "http://localhost:8000/api/helpdesk/room-change/",
+        "https://pragati-hostel.onrender.com/api/helpdesk/room-change/",
         formData,
         {
           headers: {

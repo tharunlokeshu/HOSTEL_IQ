@@ -20,7 +20,7 @@ const AdminStudentManager = () => {
 
   const fetchStudentCount = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/users/admin/total-students/', {
+      const response = await axios.get('https://pragati-hostel.onrender.com/api/users/admin/total-students/', {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -33,7 +33,7 @@ const AdminStudentManager = () => {
 
   const fetchStudentList = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/users/admin/all-students/', {
+      const response = await axios.get('https://pragati-hostel.onrender.com/api/users/admin/all-students/', {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -55,7 +55,7 @@ const AdminStudentManager = () => {
 
   const refreshAccessToken = async () => {
     try {
-      const response = await axios.post('http://localhost:8000/api/token/refresh/', {
+      const response = await axios.post('https://pragati-hostel.onrender.com/api/token/refresh/', {
         refresh: refreshToken,
       });
       localStorage.setItem('adminToken', response.data.access);
@@ -73,7 +73,7 @@ const AdminStudentManager = () => {
 
     const tryAddStudent = async (token) => {
       try {
-        await axios.post('http://localhost:8000/api/users/admin/add-student/', studentData, {
+        await axios.post('https://pragati-hostel.onrender.com/api/users/admin/add-student/', studentData, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

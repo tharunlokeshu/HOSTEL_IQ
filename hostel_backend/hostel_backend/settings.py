@@ -18,7 +18,7 @@ ALLOWED_HOSTS = [
 
 # ✅ CSRF Trusted Origins (for HTTPS frontends / APIs)
 CSRF_TRUSTED_ORIGINS = [
-    "https://pragati-hostel.onrender.com",
+    "https://pragati-hostel.onrender.com/",
     "https://your-frontend-domain.vercel.app",  # replace with your Vercel frontend domain
 ]
 
