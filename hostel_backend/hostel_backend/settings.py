@@ -66,19 +66,20 @@ TEMPLATES = [
 WSGI_APPLICATION = "hostel_backend.wsgi.application"
 
 # Database (MySQL)
+import os
+import dj_database_url  # optional but useful
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('MYSQL_DATABASE', 'Hostel_IQ'),
-        'USER': os.environ.get('MYSQL_USER', 'root'),
-        'PASSWORD': os.environ.get('MYSQL_PASSWORD', 'TharunLokesh@123'),
-        'HOST': os.environ.get('MYSQL_HOST', 'localhost'),
-        'PORT': os.environ.get('MYSQL_PORT', '3306'),
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        },
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get("DB_NAME", "hostel_grlp"),
+        'USER': os.environ.get("DB_USER", "hostel_grlp_user"),
+        'PASSWORD': os.environ.get("DB_PASSWORD"),  # no hardcoded fallback!
+        'HOST': os.environ.get("DB_HOST", "dpg-d2o11mbuibrs73faqu2g-a"),
+        'PORT': os.environ.get("DB_PORT", "5432"),
     }
 }
+
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
