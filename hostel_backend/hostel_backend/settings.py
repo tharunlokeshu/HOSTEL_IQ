@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from datetime import timedelta
+import dj_database_url
 
 # Base directory
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -66,16 +67,15 @@ TEMPLATES = [
 WSGI_APPLICATION = "hostel_backend.wsgi.application"
 
 # Database (MySQL)
-import os
-import dj_database_url  # optional but useful
+
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.environ.get("DB_NAME", "hostel_grlp"),
         'USER': os.environ.get("DB_USER", "hostel_grlp_user"),
-        'PASSWORD': os.environ.get("DB_PASSWORD"),  # no hardcoded fallback!
-        'HOST': os.environ.get("DB_HOST", "dpg-d2o11mbuibrs73faqu2g-a"),
+        'PASSWORD': os.environ.get("DB_PASSWORD", "ROqJLMH6adAeRTEhAsCcYrXmyr4oQ62d"),
+        'HOST': os.environ.get("DB_HOST", "dpg-d2o11mbuibrs73faqu2g-a.oregon-postgres.render.com"),
         'PORT': os.environ.get("DB_PORT", "5432"),
     }
 }
