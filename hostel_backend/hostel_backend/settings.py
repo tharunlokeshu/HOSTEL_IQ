@@ -1,7 +1,6 @@
 import os
 from pathlib import Path
 from datetime import timedelta
-import dj_database_url
 
 # Base directory
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -66,9 +65,7 @@ TEMPLATES = [
 # WSGI
 WSGI_APPLICATION = "hostel_backend.wsgi.application"
 
-# Database (MySQL)
-
-
+# Database (PostgreSQL)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -79,7 +76,6 @@ DATABASES = {
         'PORT': os.environ.get("DB_PORT", "5432"),
     }
 }
-
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
