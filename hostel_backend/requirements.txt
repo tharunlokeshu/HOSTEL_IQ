@@ -18,3 +18,4 @@ python-decouple==3.8
 pytz==2025.2
 six==1.17.0
 tzdata==2025.2
+psycopg2-binary>=2.9.9
