@@ -19,7 +19,8 @@ ALLOWED_HOSTS = [
 # ✅ CSRF Trusted Origins (for HTTPS frontends / APIs)
 CSRF_TRUSTED_ORIGINS = [
     "https://pragati-hostel.onrender.com/",
-    "https://pragati-hostel-x6p0.onrender.com",  # replace with your Vercel frontend domain
+    "https://pragati-hostel-x6p0.onrender.com",
+    "https://hostel-iq.onrender.com"# replace with your Vercel frontend domain
 ]
 
 # Applications
@@ -56,7 +57,8 @@ CORS_ALLOW_ALL_ORIGINS = False  # safer than True
 CORS_ALLOWED_ORIGINS = [
     "https://pragati-hostel.onrender.com",
     "https://pragati-hostel-x6p0.onrender.com",  # replace with frontend domain
-    "http://localhost:3000",  # for local React dev
+    "http://localhost:3000",
+    "https://hostel-iq.onrender.com"# for local React dev
 ]
 
 # URL configuration

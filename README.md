@@ -2,10 +2,9 @@
 
 A **next-gen full-stack hostel helpdesk system** built with Django, React, and MySQL — offering advanced complaint tracking, room change workflows, emergency reporting, and more — tailored for **students and admins** with secure, role-based dashboards.
 
-## 📽️ Demo Video
+## 🌐 Live Demo
 
-[📥 Click here to watch the Demo Video](screenshots/Demo-Video.mp4)
-
+[🚀 Visit Live Demo](https://hostel-iq.onrender.com)
 
 ---
 ## 📸 UI Screenshots
