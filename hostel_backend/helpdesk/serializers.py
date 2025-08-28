@@ -18,6 +18,7 @@ class ComplaintSerializer(serializers.ModelSerializer):
             'student_username',
             'title',
             'description',
+            'category', 
             'image',
             'status',
             'room_number',
