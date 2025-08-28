@@ -86,3 +86,21 @@ class DeleteStudentView(APIView):
             return Response({"message": "Student deleted successfully."}, status=status.HTTP_204_NO_CONTENT)
         except Student.DoesNotExist:
             return Response({"error": "Student not found."}, status=status.HTTP_404_NOT_FOUND)
+
+
+
+# views.py
+from django.http import HttpResponse
+from django.contrib.auth import get_user_model
+
+def create_admin(request):
+    User = get_user_model()
+    if not User.objects.filter(username='THARUN LOKESH').exists():
+        User.objects.create_superuser('THARUN LOKESH', 'tharun@example.com', '852852')
+        return HttpResponse("Admin created!")
+    else:
+        admin_user = User.objects.get(username='THARUN LOKESH')
+        admin_user.set_password('852852')
+        admin_user.save()
+        return HttpResponse("Admin password reset!")
+
