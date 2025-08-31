@@ -49,7 +49,7 @@ const FoodMenu = () => {
 
   return (
     <div className="food-menu-container">
-      <h2 className="food-menu-title">🍴 Pragathi College – Mess Menu</h2>
+      <h2 className="food-menu-title">🍴 Pragati College – Mess Menu</h2>
       <table className="food-menu-table">
         <thead>
           <tr>
