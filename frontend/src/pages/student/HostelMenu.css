@@ -1,85 +1,106 @@
-/* Root Styling */
-.hostel-menu {
-  min-height: 100vh;
-  padding: 4rem 2rem;
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  color: #f0faff;
-  font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
+.food-menu-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
-/* Heading */
-.hostel-menu h2 {
+.food-menu-title {
   text-align: center;
-  font-size: 3.5rem;
-  margin-bottom: 3rem;
-  font-weight: 700;
-  color: #00ffe7;
-  letter-spacing: 1px;
-  text-shadow: 0 0 10px #00ffe7, 0 0 30px #00ffe7;
-  animation: pulse-glow 2.5s infinite;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-weight: 600;
 }
 
-/* Grid */
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
-  padding: 0 1rem;
-}
-
-/* Card */
-.menu-card {
-  position: relative;
-  background: rgba(255, 255, 255, 0.06);
-  border: 2px solid rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  padding: 2rem;
-  backdrop-filter: blur(15px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s ease;
+.food-menu-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  background: white;
+  border-radius: 10px;
   overflow: hidden;
-  color: #ffffff;
 }
 
-.menu-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  border-color: #00ffe7;
-  box-shadow: 0 0 20px rgba(0, 255, 231, 0.5);
+.food-menu-table th,
+.food-menu-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: left;
+  vertical-align: top;
 }
 
-/* Day Title */
-.menu-card h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+.food-menu-table th {
+  background: #2c3e50;
+  color: white;
   font-weight: 600;
-  color: #ffcc70;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding-bottom: 0.5rem;
+  text-align: center;
 }
 
-/* Meal Info */
-.menu-card p {
-  font-size: 1.1rem;
-  margin: 0.5rem 0;
-  line-height: 1.6;
-  color: #e0f7fa;
+.day-column {
+  font-weight: bold;
+  background: #f9f9f9;
+  text-align: center;
 }
 
-.menu-card p strong {
-  color: #ffffff;
-  font-weight: 600;
+.note {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #666;
+  text-align: center;
 }
 
-/* Glowing animation */
-@keyframes pulse-glow {
-  0% {
-    text-shadow: 0 0 8px #00ffe7;
+/* ✅ Responsive for Mobile */
+@media (max-width: 768px) {
+  .food-menu-table,
+  .food-menu-table thead,
+  .food-menu-table tbody,
+  .food-menu-table th,
+  .food-menu-table td,
+  .food-menu-table tr {
+    display: block;
   }
-  50% {
-    text-shadow: 0 0 16px #00ffe7, 0 0 32px #00ffe7;
+
+  .food-menu-table thead {
+    display: none; /* Hide header in mobile */
   }
-  100% {
-    text-shadow: 0 0 8px #00ffe7;
+
+  .food-menu-table tr {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    background: #fafafa;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   }
+
+  .food-menu-table td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+
+  .food-menu-table td:last-child {
+    border-bottom: none;
+  }
+
+  .food-menu-table td::before {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    width: 45%;
+    white-space: nowrap;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .food-menu-table td:nth-child(1)::before { content: "Day"; }
+  .food-menu-table td:nth-child(2)::before { content: "Breakfast"; }
+  .food-menu-table td:nth-child(3)::before { content: "Lunch"; }
+  .food-menu-table td:nth-child(4)::before { content: "Snacks"; }
+  .food-menu-table td:nth-child(5)::before { content: "Dinner"; }
 }

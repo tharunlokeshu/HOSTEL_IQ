@@ -1,8 +1,8 @@
 # helpdesk/models.py
 
-from django.db import models
-from users.models import CustomUser  # or use settings.AUTH_USER_MODEL
 from django.contrib.auth import get_user_model
+from django.db import models
+from users.models import CustomUser  # your user model
 
 class Complaint(models.Model):
     STATUS_CHOICES = [
@@ -11,20 +11,25 @@ class Complaint(models.Model):
         ('resolved', 'Resolved'),
     ]
 
-    student = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    student = models.ForeignKey(
+        CustomUser,
+        null=True,  # allows anonymous submissions
+        blank=True,
+        on_delete=models.SET_NULL
+    )
     title = models.CharField(max_length=200)
     description = models.TextField()
+    category = models.CharField(max_length=50, blank=True)
     image = models.ImageField(upload_to='complaints/', blank=True, null=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
-    room_number = models.CharField(max_length=10)
+    room_number = models.CharField(max_length=10, blank=True)
     admin_comment = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def str(self):
-        return f"{self.title} ({self.status}) "
-    
-    
+    def __str__(self):
+        return f"{self.title} ({self.status})"
+
 
 class MessFeedback(models.Model):
     full_name = models.CharField(max_length=100)
@@ -197,3 +202,5 @@ class LostAndFound(models.Model):
 
     def __str__(self):
         return f"{self.item_name} - {self.student.username}"
+
+

@@ -1,219 +1,142 @@
-/* OutPass.css */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
-
+/* Container */
 .outpass-form-container {
-  max-width: 700px;
+  max-width: 800px;
   margin: 40px auto;
-  background: linear-gradient(135deg, #1a1a2e, #121212);
-  padding: 30px 35px;
-  border-radius: 18px;
-  box-shadow:
-    0 8px 30px rgba(0, 0, 0, 0.7),
-    inset 0 0 15px rgba(255, 255, 255, 0.05);
-  font-family: 'Inter', sans-serif;
-  color: #e0e0e0;
-  user-select: none;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #111;
 }
 
+/* Title */
 .form-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #111;
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 28px;
-  color: #00bcd4;
-  text-shadow:
-    0 0 8px #00bcd4,
-    0 0 18px #00acc1;
+  margin-bottom: 20px;
 }
 
+/* Form */
 .outpass-form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 14px;
+  margin-bottom: 24px;
 }
 
+/* Input + Textarea */
 .form-input {
-  background: #0f1620;
-  border: 2px solid #222c3a;
-  border-radius: 14px;
-  padding: 12px 18px;
-  font-size: 1rem;
-  color: #cbd5e1;
-  resize: vertical;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #111;
+  background: #f9f9f9;
+  transition: border 0.3s ease, background 0.3s ease;
 }
 
 .form-input:focus {
-  border-color: #00bcd4;
-  box-shadow: 0 0 12px #00bcd4aa;
+  border-color: #007bff;
+  background: #fff;
   outline: none;
 }
 
-textarea.form-input {
-  min-height: 100px;
-  font-family: 'Inter', sans-serif;
-  line-height: 1.4;
-}
-
+/* Button */
 .submit-button {
-  background: linear-gradient(45deg, #00bcd4, #008ba3);
+  padding: 12px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
   color: #fff;
   font-weight: 600;
-  padding: 14px 0;
   border: none;
-  border-radius: 20px;
-  font-size: 1.1rem;
+  border-radius: 8px;
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(0, 188, 212, 0.4);
-  transition: background 0.3s ease, transform 0.15s ease;
-  user-select: none;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .submit-button:hover {
-  background: linear-gradient(45deg, #008ba3, #00bcd4);
+  background: linear-gradient(135deg, #0056b3, #00408a);
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(0, 188, 212, 0.6);
 }
 
+/* Messages */
 .form-message {
-  margin-top: 20px;
+  margin-top: 10px;
   text-align: center;
-  font-weight: 600;
-  font-size: 1.05rem;
-  color: #4caf50; /* success green */
-  user-select: none;
+  font-weight: 500;
+  color: #222;
 }
 
 .error-message {
-  margin-top: 12px;
+  margin-top: 10px;
+  color: #d9534f;
   text-align: center;
-  font-weight: 600;
-  font-size: 1.05rem;
-  color: #ff5252; /* error red */
-  user-select: none;
 }
 
-/* OutPass Requests Table */
+/* Table */
 .outpass-table {
   width: 100%;
-  margin-top: 32px;
-  border-collapse: separate;
-  border-spacing: 0 14px;
-  background: rgba(30, 30, 47, 0.85);
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  color: #cfd8dc;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 15px;
+  color: #111;
 }
 
-.outpass-table thead tr {
-  background: linear-gradient(90deg, #2196f3, #64b5f6);
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.1rem;
-  user-select: none;
+.outpass-table th,
+.outpass-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
 }
 
-.outpass-table thead th {
-  padding: 16px 24px;
-  text-align: left;
+.outpass-table th {
+  background: #f1f5fb;
+  font-weight: 600;
+  color: #222;
 }
 
-.outpass-table tbody tr {
-  background: #2a2a3f;
-  transition: background-color 0.3s ease;
-  cursor: default;
-  border-radius: 12px;
+.outpass-table tr:hover {
+  background: #f9faff;
 }
 
-.outpass-table tbody tr:hover {
-  background: #3a3a5f;
-}
-
-.outpass-table tbody td {
-  padding: 14px 24px;
-  vertical-align: middle;
-  font-size: 1rem;
-  word-break: break-word;
-  position: relative;
-}
-
-/* Status badges with color coding */
+/* Status badges */
 .status-badge {
-  padding: 4px 12px;
+  padding: 6px 12px;
   border-radius: 20px;
+  font-size: 13px;
   font-weight: 600;
   text-transform: capitalize;
-  user-select: none;
-  display: inline-block;
-  box-shadow: 0 0 8px #00000055;
 }
 
-/* Status colors */
+/* Colors for statuses */
 .status-badge.pending {
-  background-color: #f9a825;
-  color: #fff;
-  text-shadow: 0 0 6px #f9a825cc;
+  background: #fff3cd;
+  color: #856404;
 }
 
 .status-badge.approved {
-  background-color: #4caf50;
-  color: #fff;
-  text-shadow: 0 0 6px #4caf50cc;
+  background: #d4edda;
+  color: #155724;
 }
 
 .status-badge.rejected {
-  background-color: #f44336;
-  color: #fff;
-  text-shadow: 0 0 6px #f44336cc;
+  background: #f8d7da;
+  color: #721c24;
 }
 
 /* Responsive */
-@media (max-width: 600px) {
-  .outpass-form-container {
-    margin: 20px 15px;
-    padding: 25px 20px;
+@media (max-width: 768px) {
+  .outpass-table {
+    font-size: 13px;
   }
-
+  
   .form-title {
-    font-size: 1.6rem;
+    font-size: 20px;
   }
 
-  .outpass-table thead {
-    display: none;
-  }
-
-  .outpass-table,
-  .outpass-table tbody,
-  .outpass-table tr,
-  .outpass-table td {
-    display: block;
-    width: 100%;
-  }
-
-  .outpass-table tr {
-    margin-bottom: 18px;
-    background: #2a2a3f;
-    border-radius: 14px;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
-  }
-
-  .outpass-table td {
-    padding: 14px 20px;
-    text-align: right;
-    position: relative;
-    font-size: 1rem;
-  }
-
-  .outpass-table td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 20px;
-    top: 14px;
-    font-weight: 700;
-    color: #64b5f6;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    font-size: 0.85rem;
+  .submit-button {
+    font-size: 14px;
   }
 }

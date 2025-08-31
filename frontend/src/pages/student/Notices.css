@@ -1,82 +1,75 @@
+/* StudentNotices.css */
+
 .notices-container {
-  min-height: 100vh;
-  padding: 2rem;
-  background: linear-gradient(145deg, #141e30, #243b55);
-  color: #f0f0f0;
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 750px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
-.notices-container h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #00ffe7;
-  text-shadow: 0 0 10px rgba(0, 255, 230, 0.5);
+.notices-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.notices-header h2 {
+  font-size: 1.8rem;
+  color: #222;
+}
+
+.refresh-btn {
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.refresh-btn:hover {
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  transform: scale(1.05);
 }
 
 .notice-list {
-  width: 100%;
-  max-width: 900px;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .notice-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(0, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 1.5rem;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-  animation: fadeSlide 0.5s ease-in-out;
+  background: #fff;
+  border-left: 6px solid #4facfe;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease-in-out;
 }
 
 .notice-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
-.notice-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.notice-card h3 {
-  margin: 0;
-  color: #00ffd5;
+.notice-title {
   font-size: 1.2rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 6px;
+}
+
+.notice-message {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 8px;
 }
 
 .notice-date {
-  font-size: 0.9rem;
-  color: #ccc;
-  font-style: italic;
-}
-
-.notice-card p {
-  margin: 0;
-  line-height: 1.6;
-  color: #e0f7fa;
-}
-
-.no-notices {
-  color: #ccc;
-  margin-top: 2rem;
-}
-
-@keyframes fadeSlide {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  font-size: 0.85rem;
+  color: #666;
 }

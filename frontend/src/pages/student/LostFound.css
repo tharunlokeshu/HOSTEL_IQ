@@ -1,80 +1,138 @@
+/* Container */
 .lostfound-container {
   max-width: 750px;
   margin: 40px auto;
   padding: 30px;
-  border-radius: 12px;
-  background-color: #ffffff;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  font-family: 'Segoe UI', sans-serif;
-  color: #111; /* Base text color */
-}
-
-.lostfound-container h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-align: center;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #111;
 }
 
+/* Title */
+.lostfound-container h2 {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 25px;
+}
+
+/* Form */
 .lostfound-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 14px;
+  margin-bottom: 35px;
 }
 
 .lostfound-form input,
 .lostfound-form textarea {
+  width: 100%;
   padding: 12px 14px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 1rem;
-  resize: vertical;
-  background-color: #fff;
-  color: #111; /* Input text */
-  transition: border 0.3s ease;
+  background: #f9f9f9;
+  font-size: 15px;
+  transition: border 0.3s ease, background 0.3s ease;
 }
 
 .lostfound-form input:focus,
 .lostfound-form textarea:focus {
-  border-color: #444;
+  border-color: #007bff;
+  background: #fff;
   outline: none;
 }
 
+.lostfound-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Button */
 .lostfound-form button {
-  background-color: #1e1e1e;
-  color: #fff;
   padding: 12px;
-  font-size: 1rem;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .lostfound-form button:hover {
-  background-color: #333;
+  background: linear-gradient(135deg, #0056b3, #00408a);
+  transform: translateY(-2px);
 }
 
-.lostfound-list {
-  margin-top: 30px;
-}
-
+/* List Section */
 .lostfound-list h3 {
-  margin-bottom: 12px;
-  font-size: 1.3rem;
-  color: #111;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
 }
 
+.lostfound-list p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Items List */
 .lostfound-list ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .lostfound-list li {
-  padding: 12px;
-  margin-bottom: 10px;
-  background-color: #f6f6f6;
-  color: #111;
-  border-left: 5px solid #1e1e1e;
-  border-radius: 8px;
+  background: #f8f9fa;
+  border: 1px solid #e3e6ea;
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease;
+}
+
+.lostfound-list li:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.lostfound-list strong {
+  color: #007bff;
+  font-size: 16px;
+}
+
+.lostfound-list em {
+  font-style: normal;
+  font-weight: 500;
+  color: #444;
+  margin-right: 6px;
+}
+
+/* Status colors */
+.lostfound-list li:has(em:contains("Unclaimed")) {
+  border-left: 6px solid #ff9800;
+}
+
+.lostfound-list li:has(em:contains("Claimed")) {
+  border-left: 6px solid #4caf50;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .lostfound-container {
+    padding: 20px;
+  }
+
+  .lostfound-container h2 {
+    font-size: 22px;
+  }
+
+  .lostfound-form button {
+    font-size: 14px;
+  }
 }

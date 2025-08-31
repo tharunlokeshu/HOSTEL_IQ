@@ -9,11 +9,12 @@ export default function LostFound() {
     location_found: '',
   });
   const [items, setItems] = useState([]);
+  const [message, setMessage] = useState(""); // ✅ For showing success/error messages
 
   useEffect(() => {
     const token = localStorage.getItem('studentToken');
     if (!token) {
-      alert('Please login to continue.');
+      setMessage("Please login to continue.");
       window.location.href = '/student/login';
       return;
     }
@@ -27,7 +28,7 @@ export default function LostFound() {
       .catch((err) => {
         console.error(err);
         if (err.response && err.response.status === 401) {
-          alert('Session expired. Please login again.');
+          setMessage("Session expired. Please login again.");
           window.location.href = '/student/login';
         }
       });
@@ -41,12 +42,12 @@ export default function LostFound() {
     e.preventDefault();
     const token = localStorage.getItem('studentToken');
     try {
-      await axios.post('https://pragati-hostel.onrender.com/api/helpdesk/student/lost-found/', formData, {
+      await axios.post('https://pragati-hostel.onrender.com/api/helpdesk/student/submit', formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      alert('Lost & Found item submitted!');
+      setMessage("✅ Lost & Found item submitted!");
       setFormData({ item_name: '', description: '', location_found: '' });
 
       const res = await axios.get('https://pragati-hostel.onrender.com/api/helpdesk/student/lost-found/list/', {
@@ -57,13 +58,17 @@ export default function LostFound() {
       setItems(res.data);
     } catch (err) {
       console.error(err);
-      alert('Failed to submit item. Please try again.');
+      setMessage("❌ Failed to submit item. Please try again.");
     }
   };
 
   return (
     <div className="lostfound-container">
       <h2>Lost & Found Portal</h2>
+
+      {/* ✅ Inline message instead of popup */}
+      {message && <div className="lostfound-message">{message}</div>}
+
       <form onSubmit={handleSubmit} className="lostfound-form">
         <input
           type="text"

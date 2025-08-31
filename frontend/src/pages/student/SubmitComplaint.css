@@ -1,189 +1,87 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
-
-html, body {
-  height: 100%;
-  margin: 0;
-  background: #121217; /* dark full background */
-  font-family: 'Inter', sans-serif;
-  color: #e0e0e0;
-  user-select: none;
+/* === Complaint Form Container === */
+.complaint-form {
+  background: #ffffff;               /* pure white */
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+  max-width: 600px;
+  margin: 40px auto;
+  font-family: "Segoe UI", Roboto, sans-serif;
 }
 
-.submit-complaint {
-  height: 100vh;
-  width: 100vw;
-
-  /* center form horizontally & vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  margin: 0;
-  padding: 20px;
-
-  /* remove border-radius, keep subtle inner shadow */
-  background: #1a1a2e;
-  border-radius: 0;
-  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.05);
-}
-
-/* Style the form inside as your card */
-.submit-complaint form {
-  background: #1a1a2e;
-  padding: 30px 35px;
-  border-radius: 18px;
-  box-shadow:
-    0 8px 30px rgba(0, 0, 0, 0.7),
-    inset 0 0 15px rgba(255, 255, 255, 0.05);
-  max-width: 480px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.submit-complaint h2 {
+/* === Heading === */
+.complaint-form h2 {
   text-align: center;
-  margin-bottom: 28px;
-  font-size: 2.2rem;
-  color: #00bcd4;
-  text-shadow:
-    0 0 8px #00bcd4,
-    0 0 18px #00acc1;
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: #222;
+  font-weight: 600;
 }
 
-.submit-complaint input[type="text"],
-.submit-complaint textarea,
-.submit-complaint select {
-  background: #0f1620;
-  border: 2px solid #222c3a;
-  border-radius: 14px;
-  padding: 12px 18px;
-  font-size: 1rem;
-  color: #cbd5e1;
-  resize: vertical;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+/* === Labels === */
+.complaint-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #444;
+  font-weight: 500;
 }
 
-.submit-complaint input[type="text"]:focus,
-.submit-complaint textarea:focus,
-.submit-complaint select:focus {
-  border-color: #00bcd4;
-  box-shadow: 0 0 12px #00bcd4aa;
+/* === Input Fields & Textarea === */
+.complaint-form input,
+.complaint-form textarea,
+.complaint-form select {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 16px;
+  background: #fff;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+/* === Category Dropdown (bigger) === */
+.complaint-form select {
+  appearance: none; /* removes default dropdown arrow */
+  font-size: 17px;
+  font-weight: 500;
+  background: #fff url("data:image/svg+xml;utf8,<svg fill='gray' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 14px center;
+  background-size: 18px;
+  padding-right: 40px; /* space for arrow */
+}
+
+/* === Focus Effect === */
+.complaint-form input:focus,
+.complaint-form textarea:focus,
+.complaint-form select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.15);
   outline: none;
 }
 
-.submit-complaint textarea {
-  min-height: 100px;
-  font-family: 'Inter', sans-serif;
-  line-height: 1.4;
+/* === Textarea Bigger === */
+.complaint-form textarea {
+  resize: vertical;
+  min-height: 120px;
 }
 
-.submit-complaint select {
-  cursor: pointer;
-}
-
-.submit-complaint button {
-  background: linear-gradient(45deg, #00bcd4, #008ba3);
+/* === Submit Button === */
+.complaint-form button {
+  width: 100%;
+  background: #007bff;
   color: #fff;
-  font-weight: 600;
-  padding: 14px 0;
+  padding: 14px;
   border: none;
-  border-radius: 20px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  box-shadow: 0 8px 20px rgba(0, 188, 212, 0.4);
-  transition: background 0.3s ease, transform 0.15s ease;
-  user-select: none;
-}
-
-.submit-complaint button:hover {
-  background: linear-gradient(45deg, #008ba3, #00bcd4);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(0, 188, 212, 0.6);
-}
-
-.submit-complaint p {
-  margin-top: 20px;
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.05rem;
-  user-select: none;
-  color: #ff5252; /* default error red */
-  transition: color 0.3s ease;
-}
-
-.submit-complaint p:empty {
-  display: none;
-}
-
-/* Success message style */
-.submit-complaint p.success {
-  color: #4caf50;
-}
-
-/* Responsive */
-@media (max-width: 520px) {
-  .submit-complaint form {
-    padding: 25px 20px;
-  }
-
-  .submit-complaint h2 {
-    font-size: 1.8rem;
-  }
-}
-
-
-.submit-complaint {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: #f9f9f9;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.submit-complaint h2 {
-  text-align: center;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.submit-complaint form {
-  display: flex;
-  flex-direction: column;
-}
-
-.submit-complaint input,
-.submit-complaint textarea,
-.submit-complaint select {
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-.submit-complaint button {
-  background-color: #4caf50;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.submit-complaint button:hover {
-  background-color: #45a049;
-}
-
-.success {
-  color: green;
-  text-align: center;
-  margin-top: 10px;
-}
-
-.error {
-  color: red;
-  text-align: center;
-  margin-top: 10px;
+.complaint-form button:hover {
+  background: #0056b3;
+  box-shadow: 0 4px 12px rgba(0, 91, 187, 0.25);
 }

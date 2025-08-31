@@ -203,7 +203,7 @@ const SubmitOutPass = () => {
             <th>From</th>
             <th>To</th>
             <th>Status</th>
-            <th>Requested At</th>
+            
           </tr>
         </thead>
         <tbody>
@@ -223,7 +223,7 @@ const SubmitOutPass = () => {
                     {pass.status}
                   </span>
                 </td>
-                <td>{new Date(pass.created_at).toLocaleString()}</td>
+               
               </tr>
             ))
           )}

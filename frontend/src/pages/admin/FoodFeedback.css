@@ -2,13 +2,11 @@
 
 .feedback-container {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   min-height: 100vh;
   padding: 50px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #e0e7f1;
   overflow-x: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -16,14 +14,11 @@
 }
 
 .feedback-table-wrapper {
-  background: rgba(255, 255, 255, 0.07);
   border-radius: 24px;
-  box-shadow:
-    0 8px 32px 0 rgba(0, 123, 255, 0.4),
-    inset 0 0 40px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.3), inset 0 0 40px rgba(0,0,0,0.05);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(0,0,0,0.1);
   max-width: 100%;
   width: 1200px;
   overflow-x: auto;
@@ -32,19 +27,13 @@
 }
 
 .feedback-table-wrapper:hover {
-  box-shadow:
-    0 0 40px 6px rgba(0, 123, 255, 0.7),
-    inset 0 0 50px rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 40px 6px rgba(0,0,0,0.5), inset 0 0 50px rgba(0,0,0,0.1);
 }
 
 .feedback-title {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 40px;
-  color: #33aaff;
-  text-shadow:
-    0 0 8px #33aaff,
-    0 0 16px #33aaff;
   letter-spacing: 1.5px;
   user-select: none;
   text-align: center;
@@ -55,27 +44,23 @@
   border-collapse: separate;
   border-spacing: 0 14px;
   font-size: 1rem;
-  color: #000000; /* <- BLACK TEXT */
   user-select: text;
   min-width: 700px;
 }
 
 .feedback-table thead tr {
-  background: linear-gradient(90deg, #0080ff, #00d8ff);
-  box-shadow: 0 0 12px rgba(0, 128, 255, 0.7);
   border-radius: 14px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.15);
   user-select: none;
 }
 
 .feedback-table thead th {
-  color: #ffffff;
   font-weight: 700;
   padding: 18px 24px;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  border-right: 1px solid rgba(255, 255, 255, 0.15);
-  transition: color 0.3s ease;
+  border-right: 1px solid rgba(0,0,0,0.08);
   cursor: default;
 }
 
@@ -84,47 +69,38 @@
 }
 
 .feedback-table tbody tr {
-  background: rgba(255, 255, 255, 0.06);
   border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
   cursor: default;
   user-select: none;
 }
 
 .feedback-table tbody tr:hover {
-  background: rgba(0, 123, 255, 0.15);
-  transform: translateX(10px);
-  box-shadow: 0 0 20px 4px rgba(0, 123, 255, 0.5);
+  transform: translateX(5px);
+  box-shadow: 0 0 20px 4px rgba(0,0,0,0.2);
 }
 
 .feedback-table tbody td {
   padding: 14px 24px;
   text-align: center;
   vertical-align: middle;
-  color: #000000; /* <- BLACK TEXT */
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid rgba(0,0,0,0.05);
   font-weight: 500;
   max-width: 200px;
   word-break: break-word;
   user-select: text;
-}
-
-.feedback-table tbody td:last-child {
-  border-right: none;
-}
-
-.feedback-table tbody td:nth-child(4) {
-  color: #ffd700;
-  font-weight: 700;
-  font-size: 1.15rem;
-  text-shadow: 0 0 8px #ffd700aa;
+  font-size: 1rem;
 }
 
 .feedback-table tbody td:last-child {
   font-size: 0.85rem;
   font-style: italic;
-  color: #a0b8d9;
+}
+
+.feedback-table tbody td:nth-child(4) {
+  font-weight: 700;
+  font-size: 1.15rem;
 }
 
 @media (max-width: 768px) {
@@ -152,5 +128,81 @@
   .feedback-title {
     font-size: 1.8rem;
     margin-bottom: 25px;
+  }
+}
+/* Mobile-first responsive stacking for feedback table */
+@media (max-width: 768px) {
+  .feedback-table-wrapper {
+    width: 100%;
+    padding: 15px 10px;
+  }
+
+  .feedback-title {
+    font-size: 2.2rem;
+  }
+
+  /* Hide table header */
+  .feedback-table thead {
+    display: none;
+  }
+
+  .feedback-table,
+  .feedback-table tbody,
+  .feedback-table tr,
+  .feedback-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .feedback-table tr {
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 12px 15px;
+    background: rgba(0,0,0,0.05); /* subtle card effect */
+    transition: transform 0.2s ease;
+  }
+
+  .feedback-table tr:hover {
+    transform: translateX(3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  }
+
+  .feedback-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    border: none;
+    white-space: normal;
+    font-size: 0.95rem;
+  }
+
+  /* Add labels for each cell */
+  .feedback-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.85rem;
+  }
+
+  /* Adjust last-child text */
+  .feedback-table td:last-child {
+    font-size: 0.85rem;
+    font-style: italic;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedback-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
+  .feedback-table td::before {
+    font-size: 0.8rem;
   }
 }

@@ -1,18 +1,13 @@
 /* Root variables for theme */
 :root {
-  --bg-dark: hsl(222, 28%, 10%);
-  --card-dark: hsl(222, 22%, 18%);
-  --text-light: hsl(0, 0%, 100%);
-  --text-muted: hsl(220, 14%, 65%);
-  --primary: hsl(210, 90%, 60%);
-  --border: hsl(222, 14%, 25%);
-  --highlight: hsl(144, 70%, 45%);
+  --text-black: #111111; /* all text black */
+  --border: rgba(0,0,0,0.2); /* subtle border for contrast */
 }
 
-/* Set global body styles for full-screen dark mode */
+/* Global body styles */
 body {
-  background-color: var(--bg-dark);
-  color: var(--text-light);
+  background-color: #ffffff; /* page background */
+  color: var(--text-black);
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -20,8 +15,8 @@ body {
 
 /* Container */
 .admin-emergencies-container {
-  background-color: var(--bg-dark);
-  color: var(--text-light);
+  background: transparent;
+  color: var(--text-black);
   min-height: 100vh;
   padding: 2rem;
 }
@@ -31,60 +26,57 @@ body {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  color: var(--primary);
-  text-shadow: 0 0 10px rgba(0, 153, 255, 0.2);
+  color: var(--text-black);
+  text-shadow: none;
 }
 
 /* Emergency Card */
 .admin-emergency-card {
-  background-color: var(--card-dark);
+  background: transparent;
   border: 1px solid var(--border);
   padding: 1.5rem;
   border-radius: 1rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  color: var(--text-black);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .admin-emergency-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
 }
 
-.admin-emergency-card p {
-  margin: 0.4rem 0;
-  color: var(--text-light);
+.admin-emergency-card p,
+.admin-emergency-card strong,
+.admin-status-label,
+.admin-status-select,
+.text-red-500 {
+  color: var(--text-black) !important;
+  background: transparent !important;
 }
 
-.admin-emergency-card strong {
-  color: var(--text-muted);
-}
-
-/* Status section */
-.admin-status-label {
-  font-weight: 600;
-  margin-right: 0.5rem;
-  color: var(--text-muted);
-}
-
+/* Status select */
 .admin-status-select {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   border: 1px solid var(--border);
-  background-color: var(--bg-dark);
-  color: var(--text-light);
+  background: transparent;
+  color: var(--text-black);
   font-size: 1rem;
   outline: none;
   transition: border 0.2s ease;
 }
 
 .admin-status-select:focus {
-  border-color: var(--highlight);
-  box-shadow: 0 0 0 3px rgba(0, 255, 153, 0.2);
+  border-color: var(--text-black);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
+/* Text warning class also black */
 .text-red-500 {
-  color: #f87171;
+  color: var(--text-black) !important;
+  background: transparent !important;
   font-weight: 500;
   margin-bottom: 1rem;
 }

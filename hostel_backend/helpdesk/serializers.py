@@ -8,23 +8,17 @@ from .models import Notice
 from .models import RoomChangeRequest
 from .models import MedicalEmergency
 from .models import LostFound
+
+
+
 class ComplaintSerializer(serializers.ModelSerializer):
     student_username = serializers.CharField(source='student.username', read_only=True)
 
     class Meta:
         model = Complaint
         fields = [
-            'id',
-            'student_username',
-            'title',
-            'description',
-            'category', 
-            'image',
-            'status',
-            'room_number',
-            'admin_comment',
-            'created_at',
-            'updated_at',
+            'id', 'student_username', 'title', 'description', 'category',
+            'image', 'status', 'room_number', 'admin_comment', 'created_at', 'updated_at'
         ]
         read_only_fields = ['status', 'admin_comment', 'created_at', 'updated_at']
 
@@ -83,3 +77,6 @@ class LostFoundSerializer(serializers.ModelSerializer):
         model = LostFound
         fields = '__all__'
         read_only_fields = ['student', 'created_at']
+
+
+

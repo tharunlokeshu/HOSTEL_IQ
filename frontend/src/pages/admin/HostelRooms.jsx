@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "./AdminRoomChangeRequests.css"; // Import the CSS file
 
 export default function AdminRoomChangeRequests() {
   const [requests, setRequests] = useState([]);
@@ -17,9 +18,7 @@ export default function AdminRoomChangeRequests() {
       const response = await axios.get(
         "https://pragati-hostel.onrender.com/api/helpdesk/admin/room-change/",
         {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+          headers: { Authorization: `Bearer ${token}` },
         }
       );
       setRequests(response.data);
@@ -57,57 +56,54 @@ export default function AdminRoomChangeRequests() {
           headers: { Authorization: `Bearer ${token}` },
         }
       );
-
-      // Refresh requests list after update
-      fetchRequests();
+      fetchRequests(); // Refresh after update
     } catch (err) {
       alert("Failed to update request.");
     }
   };
 
   return (
-    <div className="p-6">
-      <h2 className="text-2xl font-bold mb-4">Room Change Requests</h2>
+    <div className="admin-room-container">
+      <h2 className="admin-room-title">Room Change Requests</h2>
 
-      {error && <p className="text-red-600 mb-4">{error}</p>}
+      {error && <p className="admin-room-error">{error}</p>}
 
-      <div className="overflow-x-auto">
-        <table className="min-w-full bg-white rounded shadow">
+      <div className="admin-table-wrapper">
+        <table className="admin-table">
           <thead>
-            <tr className="bg-gray-100 text-left">
-              <th className="px-4 py-2">Student</th>
-              <th className="px-4 py-2">Current Room</th>
-              <th className="px-4 py-2">Requested Room</th>
-              <th className="px-4 py-2">Reason</th>
-              <th className="px-4 py-2">Status</th>
-              <th className="px-4 py-2">Admin Action</th>
-              <th className="px-4 py-2">Submit</th>
+            <tr>
+              <th>Student</th>
+              <th>Current Room</th>
+              <th>Requested Room</th>
+              <th>Reason</th>
+              <th>Status</th>
+              <th>Admin Action</th>
+              <th>Submit</th>
             </tr>
           </thead>
           <tbody>
             {requests.length === 0 ? (
               <tr>
-                <td className="px-4 py-3 text-center" colSpan="7">
+                <td colSpan="7" className="admin-empty">
                   No room change requests found.
                 </td>
               </tr>
             ) : (
               requests.map((req) => (
-                <tr key={req.id} className="border-t">
-                  <td className="px-4 py-2">{req.student_name || req.student}</td>
-                  <td className="px-4 py-2">{req.current_room}</td>
-                  <td className="px-4 py-2">{req.requested_room}</td>
-                  <td className="px-4 py-2">{req.reason}</td>
-                  <td className="px-4 py-2 capitalize">{req.status}</td>
-                  <td className="px-4 py-2">
+                <tr key={req.id}>
+                  <td data-label="Student">{req.student_name || req.student}</td>
+                  <td data-label="Current Room">{req.current_room}</td>
+                  <td data-label="Requested Room">{req.requested_room}</td>
+                  <td data-label="Reason">{req.reason}</td>
+                  <td data-label="Status" className="capitalize">{req.status}</td>
+                  <td data-label="Admin Action">
                     {req.status === "pending" ? (
-                      <div className="flex flex-col sm:flex-row gap-2">
+                      <div className="admin-actions">
                         <select
                           value={statusUpdates[req.id]?.status || ""}
                           onChange={(e) =>
                             handleInputChange(req.id, "status", e.target.value)
                           }
-                          className="border p-1 rounded"
                         >
                           <option value="">Select</option>
                           <option value="approved">Approve</option>
@@ -120,18 +116,17 @@ export default function AdminRoomChangeRequests() {
                           onChange={(e) =>
                             handleInputChange(req.id, "admin_comment", e.target.value)
                           }
-                          className="border rounded p-1 w-48"
                         />
                       </div>
                     ) : (
-                      <span className="text-green-600 font-semibold">Updated</span>
+                      <span className="admin-updated">Updated</span>
                     )}
                   </td>
-                  <td className="px-4 py-2">
+                  <td data-label="Submit">
                     {req.status === "pending" && (
                       <button
                         onClick={() => handleSubmit(req.id)}
-                        className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded"
+                        className="admin-submit-btn"
                       >
                         Submit
                       </button>

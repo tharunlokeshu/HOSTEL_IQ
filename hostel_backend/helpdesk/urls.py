@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import MessFeedbackView, MessFeedbackListView
 from .views import (
-    SubmitComplaintView,
+    
     MyComplaintsView,
     StudentComplaintHistoryView,
     AdminComplaintListView,
@@ -44,14 +44,17 @@ from .views import (
     ExportLostFoundView,
     ExportMessFeedbackView,
 )
+
+from .views import submit_complaint_anonymous
+
 urlpatterns = [
     # Student Endpoints
-    path('submit/', SubmitComplaintView.as_view(), name='submit_complaint'),
+    path('submit/', submit_complaint_anonymous, name='submit_complaint'),
     path('my-complaints/', MyComplaintsView.as_view(), name='my_complaints'),
     path('my-history/', StudentComplaintHistoryView.as_view(), name='student_history'),
 
     # Admin Endpoints
-    path('admin/complaints/', AdminComplaintListView.as_view(), name='admin_complaints'),
+    path('admin/complaints/', AdminComplaintListView.as_view(), name='admin_complaints'),path('submit/', submit_complaint_anonymous, name='submit_complaint'),
     path('admin/complaints/<int:pk>/', AdminUpdateComplaintView.as_view(), name='admin_update_complaint'),
     path('admin/history/', AdminComplaintHistoryView.as_view(), name='admin_history'),
     path('mess-feedback/', MessFeedbackView.as_view(), name='mess-feedback'),
@@ -75,7 +78,6 @@ urlpatterns = [
     
     path('student/lost-found/', LostFoundCreateView.as_view(), name='lost-found-create'),
     path('student/lost-found/list/', LostFoundListView.as_view(), name='lost-found-list'),
-
     # Admin
     path('admin/lost-found/', AdminLostFoundListView.as_view(), name='admin-lost-found-list'),
     path('admin/lost-found/<int:pk>/update/', AdminUpdateLostFoundView.as_view(), name='admin-lost-found-update'),
@@ -86,8 +88,6 @@ urlpatterns = [
     path('admin/lost-found/export/', ExportLostFoundView.as_view()),
     path('admin/mess-feedback/export/', ExportMessFeedbackView.as_view()),
 ]
-
-
 
 
 

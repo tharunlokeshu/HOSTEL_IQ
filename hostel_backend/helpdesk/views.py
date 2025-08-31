@@ -40,13 +40,53 @@ from django.http import HttpResponse
 import pandas as pd
 from .models import Complaint, OutPassRequest, RoomChangeRequest, MedicalEmergencyReport, LostAndFound, MessFeedback
 
-# ✅ 👨‍🎓 Student: Submit Complaint
-class SubmitComplaintView(generics.CreateAPIView):
-    serializer_class = ComplaintSerializer
-    permission_classes = [IsAuthenticated]
+from rest_framework.permissions import AllowAny
+from rest_framework import generics
+from .serializers import ComplaintSerializer
 
-    def perform_create(self, serializer):
-        serializer.save(student=self.request.user)
+# helpdesk/views.py
+# helpdesk/views.py
+from rest_framework.decorators import api_view, permission_classes, authentication_classes
+from rest_framework.permissions import AllowAny
+from rest_framework.response import Response
+from .serializers import ComplaintSerializer
+
+# helpdesk/views.py
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
+import json
+from .models import Complaint
+
+@csrf_exempt
+def submit_complaint_anonymous(request):
+    if request.method == "POST":
+        try:
+            data = json.loads(request.body)
+            complaint = Complaint.objects.create(
+                title=data.get("title", ""),
+                description=data.get("description", ""),
+                category=data.get("category", ""),
+                room_number=data.get("room_number", ""),
+                student=None,  # anonymous
+            )
+            return JsonResponse({
+                "id": complaint.id,
+                "student_username": None,
+                "title": complaint.title,
+                "description": complaint.description,
+                "category": complaint.category,
+                "room_number": complaint.room_number,
+                "status": complaint.status,
+                "admin_comment": complaint.admin_comment,
+                "created_at": complaint.created_at,
+                "updated_at": complaint.updated_at
+            }, status=201)
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=400)
+    return JsonResponse({"error": "Invalid method"}, status=405)
+
+
+
 
 
 # ✅ 👨‍🎓 Student: View My Complaints
@@ -437,3 +477,8 @@ class AdminLostFoundUpdateView(generics.RetrieveUpdateAPIView):
     queryset = LostFound.objects.all()
     serializer_class = LostFoundSerializer
     permission_classes = [permissions.IsAuthenticated]
+    
+    
+    
+    
+   

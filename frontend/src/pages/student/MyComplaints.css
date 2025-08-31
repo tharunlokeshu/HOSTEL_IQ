@@ -1,99 +1,174 @@
-.my-complaints {
+/* ================================
+   Complaints Page – Professional UI
+   ================================ */
+
+/* Page container */
+.complaints-page {
+  padding: 40px 20px;
+  background: #f9fafc;
   min-height: 100vh;
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: #f0f0f0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: #2d2d2d;
 }
 
-.my-complaints h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #00ffc3;
-  text-shadow: 1px 1px 2px #000;
-}
-
-.my-complaints p {
-  text-align: center;
-  font-size: 1.1rem;
-  color: #cccccc;
-  margin-top: 40px;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-}
-
-li {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(14px);
-  border-radius: 20px;
-  padding: 25px;
-  box-shadow: 0 6px 30px rgba(0, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-li:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 40px rgba(0, 255, 255, 0.3);
-}
-
-li strong {
-  display: block;
-  font-size: 1.3rem;
-  color: #00ffe0;
-  margin-bottom: 10px;
-}
-
-li::before {
-  content: '📝 ';
-  font-size: 1.2rem;
-}
-
-li::after {
-  content: attr(data-status);
-  display: inline-block;
-  margin-top: 12px;
-  padding: 6px 14px;
-  border-radius: 12px;
-  font-size: 0.85rem;
+/* Title */
+.complaints-page h2 {
+  font-size: 1.8rem;
   font-weight: 600;
-  text-transform: uppercase;
-  background-color: #444;
-  color: #fff;
+  color: #1a202c;
+  margin-bottom: 20px;
+  border-left: 5px solid #2563eb;
+  padding-left: 12px;
 }
 
-li[data-status='Pending']::after {
-  background-color: #cc4444;
-  color: #fff0f0;
+/* Complaint Form */
+.complaint-form {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 40px;
 }
 
-li[data-status='In Progress']::after {
-  background-color: #f0ad4e;
-  color: #fff9e6;
+.complaint-form label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #374151;
 }
 
-li[data-status='Resolved']::after {
-  background-color: #1f8a70;
-  color: #d4fff4;
+.complaint-form input,
+.complaint-form textarea,
+.complaint-form select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: #f9fafb;
+  font-size: 0.95rem;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
 }
 
-
-
-li[data-status='Pending']::after {
-  background-color: #ffd700;
-  color: #222222;
+.complaint-form input:focus,
+.complaint-form textarea:focus,
+.complaint-form select:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
-li[data-status='Resolved']::after {
-  background-color: #00ff88;
-  color: #0c0c0c;
+/* Button */
+.complaint-form button {
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.1s ease;
+}
+
+.complaint-form button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.complaint-form button:active {
+  transform: translateY(0);
+}
+
+/* Message Box */
+.complaint-form .message {
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.message.success {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #34d399;
+}
+
+.message.error {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #f87171;
+}
+
+/* Complaints List */
+.complaints-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.complaint-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.complaint-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Complaint Title */
+.complaint-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+/* Complaint Description */
+.complaint-card p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+/* Complaint Meta Info */
+.complaint-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 12px;
+}
+
+/* Status Badge */
+.status {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+
+.status.pending {
+  background: #fff7ed;
+  color: #b45309;
+  border: 1px solid #f59e0b;
+}
+
+.status.in_progress {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #3b82f6;
+}
+
+.status.resolved {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #34d399;
 }
