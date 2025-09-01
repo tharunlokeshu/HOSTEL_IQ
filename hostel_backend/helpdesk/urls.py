@@ -46,15 +46,28 @@ from .views import (
 )
 
 from .views import submit_complaint_anonymous
+# helpdesk/urls.py
+from .views import SubmitComplaintView
 
 urlpatterns = [
+    # Authenticated complaint submission
+    path('submit-auth/', SubmitComplaintView.as_view(), name='submit_complaint_auth'),
+
+    # Keep your anonymous endpoint if needed
+    path('submit/', submit_complaint_anonymous, name='submit_complaint'),
+
+    # My complaints
+    path('my-history/', MyComplaintsView.as_view(), name='student_history'),
+
+
+
     # Student Endpoints
     path('submit/', submit_complaint_anonymous, name='submit_complaint'),
     path('my-complaints/', MyComplaintsView.as_view(), name='my_complaints'),
     path('my-history/', StudentComplaintHistoryView.as_view(), name='student_history'),
 
     # Admin Endpoints
-    path('admin/complaints/', AdminComplaintListView.as_view(), name='admin_complaints'),path('submit/', submit_complaint_anonymous, name='submit_complaint'),
+    path('admin/complaints/', AdminComplaintListView.as_view(), name='admin_complaints'),
     path('admin/complaints/<int:pk>/', AdminUpdateComplaintView.as_view(), name='admin_update_complaint'),
     path('admin/history/', AdminComplaintHistoryView.as_view(), name='admin_history'),
     path('mess-feedback/', MessFeedbackView.as_view(), name='mess-feedback'),

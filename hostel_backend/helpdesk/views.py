@@ -57,6 +57,28 @@ from django.http import JsonResponse
 import json
 from .models import Complaint
 
+# helpdesk/views.py
+from rest_framework import generics, permissions
+from rest_framework.response import Response
+from .models import Complaint
+from .serializers import ComplaintSerializer
+
+# Authenticated complaint submission
+class SubmitComplaintView(generics.CreateAPIView):
+    serializer_class = ComplaintSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def perform_create(self, serializer):
+        # Attach the logged-in student automatically
+        serializer.save(student=self.request.user)
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        return Response(serializer.data, status=201)
+
+
 @csrf_exempt
 def submit_complaint_anonymous(request):
     if request.method == "POST":
