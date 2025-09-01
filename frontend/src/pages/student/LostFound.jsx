@@ -8,31 +8,42 @@ export default function LostFound() {
     description: '',
     location_found: '',
   });
-  const [items, setItems] = useState([]);
-  const [message, setMessage] = useState(""); // ✅ For showing success/error messages
 
+  const [items, setItems] = useState([]);
+  const [message, setMessage] = useState('');
+
+  const token = localStorage.getItem('studentToken');
+
+  // Redirect to login if no token
   useEffect(() => {
-    const token = localStorage.getItem('studentToken');
     if (!token) {
-      setMessage("Please login to continue.");
+      setMessage('Please login to continue.');
       window.location.href = '/student/login';
       return;
     }
 
-    axios.get('https://pragati-hostel.onrender.com/api/helpdesk/student/lost-found/list/', {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-      .then((res) => setItems(res.data))
-      .catch((err) => {
-        console.error(err);
-        if (err.response && err.response.status === 401) {
-          setMessage("Session expired. Please login again.");
-          window.location.href = '/student/login';
+    fetchItems();
+  }, [token]);
+
+  const fetchItems = async () => {
+    try {
+      const res = await axios.get(
+        'https://pragati-hostel.onrender.com/api/helpdesk/student/lost-found/list/',
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
-      });
-  }, []);
+      );
+      setItems(res.data);
+    } catch (err) {
+      console.error(err);
+      if (err.response && err.response.status === 401) {
+        setMessage('Session expired. Please login again.');
+        window.location.href = '/student/login';
+      }
+    }
+  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -40,25 +51,26 @@ export default function LostFound() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const token = localStorage.getItem('studentToken');
     try {
-      await axios.post('https://pragati-hostel.onrender.com/api/helpdesk/student/submit', formData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      setMessage("✅ Lost & Found item submitted!");
+      // ✅ POST with JWT token, CSRF bypassed
+      await axios.post(
+        'https://pragati-hostel.onrender.com/api/helpdesk/student/lost-found/',
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      setMessage('✅ Lost & Found item submitted!');
       setFormData({ item_name: '', description: '', location_found: '' });
 
-      const res = await axios.get('https://pragati-hostel.onrender.com/api/helpdesk/student/lost-found/list/', {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      setItems(res.data);
+      // Refresh the item list
+      fetchItems();
     } catch (err) {
       console.error(err);
-      setMessage("❌ Failed to submit item. Please try again.");
+      setMessage('❌ Failed to submit item. Please try again.');
     }
   };
 
@@ -66,7 +78,7 @@ export default function LostFound() {
     <div className="lostfound-container">
       <h2>Lost & Found Portal</h2>
 
-      {/* ✅ Inline message instead of popup */}
+      {/* Inline message */}
       {message && <div className="lostfound-message">{message}</div>}
 
       <form onSubmit={handleSubmit} className="lostfound-form">
@@ -104,8 +116,10 @@ export default function LostFound() {
           <ul>
             {items.map((item) => (
               <li key={item.id}>
-                <strong>{item.item_name}</strong> – {item.description}<br />
-                <em>Found at:</em> {item.location_found}<br />
+                <strong>{item.item_name}</strong> – {item.description}
+                <br />
+                <em>Found at:</em> {item.location_found}
+                <br />
                 <em>Status:</em> {item.is_claimed ? 'Claimed' : 'Unclaimed'}
               </li>
             ))}
