@@ -9,18 +9,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "django-insecure-default-secret")
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
-# ✅ Allowed hosts (no https/http, only domain names or IPs)
+# Allowed hosts
 ALLOWED_HOSTS = [
     "pragati-hostel.onrender.com",
     "localhost",
     "127.0.0.1",
+    "hostel-iq.onrender.com",
 ]
 
-# ✅ CSRF Trusted Origins (for HTTPS frontends / APIs)
+# CSRF Trusted Origins
 CSRF_TRUSTED_ORIGINS = [
-    "https://pragati-hostel.onrender.com/",
+    "https://pragati-hostel.onrender.com",
     "https://pragati-hostel-x6p0.onrender.com",
-    "https://hostel-iq.onrender.com"# replace with your Vercel frontend domain
+    "https://hostel-iq.onrender.com",
 ]
 
 # Applications
@@ -52,23 +53,23 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-# ✅ CORS settings
-CORS_ALLOW_ALL_ORIGINS = False  # safer than True
+# CORS settings
+CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
     "https://pragati-hostel.onrender.com",
-    "https://pragati-hostel-x6p0.onrender.com",  # replace with frontend domain
+    "https://pragati-hostel-x6p0.onrender.com",
     "http://localhost:3000",
-    "https://hostel-iq.onrender.com"# for local React dev
+    "https://hostel-iq.onrender.com",
 ]
 
 # URL configuration
 ROOT_URLCONF = "hostel_backend.urls"
 
-# Templates
+# Templates (React build included)
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "frontend" / "build"],  # ✅ React build folder
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -110,9 +111,12 @@ TIME_ZONE = "Asia/Kolkata"
 USE_I18N = True
 USE_TZ = True
 
-# Static files
+# Static files (React + Django)
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [
+    BASE_DIR / "frontend" / "build" / "static",  # ✅ React static files
+]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Media files
@@ -131,14 +135,13 @@ REST_FRAMEWORK = {
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
     "DEFAULT_PERMISSION_CLASSES": (
-        "rest_framework.permissions.AllowAny",  # ✅ allow anonymous by default
+        "rest_framework.permissions.AllowAny",
     ),
     "DEFAULT_FILTER_BACKENDS": [
         "django_filters.rest_framework.DjangoFilterBackend",
         "rest_framework.filters.SearchFilter",
     ],
 }
-
 
 # JWT settings
 SIMPLE_JWT = {
