@@ -10,7 +10,7 @@ export default function MyComplaints() {
   const fetchHistory = async () => {
     try {
       const res = await axios.get(
-        "http://127.0.0.1:8000/api/helpdesk/my-history/",
+        "https://pragati-hostel.onrender.com/api/helpdesk/my-history/",
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setHistory(res.data);

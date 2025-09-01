@@ -18,7 +18,7 @@ export default function SubmitComplaint() {
     setError("");
     try {
       await axios.post(
-        "http://127.0.0.1:8000/api/helpdesk/submit-auth/",
+        "https://pragati-hostel.onrender.com/api/helpdesk/submit-auth/",
         { title, description, category, room_number: roomNumber },
         { headers: { Authorization: `Bearer ${token}` } }
       );
