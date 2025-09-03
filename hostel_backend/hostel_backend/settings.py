@@ -111,11 +111,14 @@ WSGI_APPLICATION = "hostel_backend.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("DB_NAME", "hostel_f1we"),
-        "USER": os.environ.get("DB_USER", "hostel_f1we_user"),
-        "PASSWORD": os.environ.get("DB_PASSWORD", "JaVRhtRySwzQq6dGdQOnuB0nhWUXBsGB"),
-        "HOST": os.environ.get("DB_HOST", "dpg-d2s8ftqdbo4c73et5mvg-a.oregon-postgres.render.com"),
-        "PORT": os.environ.get("DB_PORT", "5432"),
+        "NAME": "hostel_f1we",
+        "USER": "hostel_f1we_user",
+        "PASSWORD": "JaVRhtRySwzQq6dGdQOnuB0nhWUXBsGB",
+        "HOST": "dpg-d2s8ftqdbo4c73et5mvg-a.oregon-postgres.render.com",
+        "PORT": "5432",
+        "OPTIONS": {
+            "sslmode": "require",  # ✅ SSL required
+        },
     }
 }
 
