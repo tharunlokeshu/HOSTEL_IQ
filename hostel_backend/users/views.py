@@ -99,8 +99,8 @@ def create_admin(request):
         User.objects.create_superuser('THARUN LOKESH', 'tharun@example.com', '852852')
         return HttpResponse("Admin created!")
     else:
-        admin_user = User.objects.get(username='THARUN LOKESH')
-        admin_user.set_password('852852')
+        admin_user = User.objects.get(username='TharunLokesh')
+        admin_user.set_password('8520')
         admin_user.save()
         return HttpResponse("Admin password reset!")
 
