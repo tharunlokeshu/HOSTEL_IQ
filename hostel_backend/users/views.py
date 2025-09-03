@@ -104,3 +104,34 @@ def create_admin(request):
         admin_user.save()
         return HttpResponse("Admin password reset!")
 
+
+# users/views.py
+from django.http import JsonResponse
+from django.contrib.auth import get_user_model
+from django.views.decorators.csrf import csrf_exempt
+
+CustomUser = get_user_model()
+
+@csrf_exempt
+def create_admin(request):
+    """
+    Creates a superuser/admin. Only for initial setup.
+    Remove this view after creating the admin!
+    """
+    if request.method == "POST":
+        username = "Tharun Lokesh"
+        email = "admin@example.com"  # replace if needed
+        password = "8520"
+
+        if CustomUser.objects.filter(username=username).exists():
+            return JsonResponse({"error": "Admin already exists"}, status=400)
+
+        CustomUser.objects.create_superuser(
+            username=username,
+            email=email,
+            password=password
+        )
+        return JsonResponse({"success": f"Admin {username} created!"})
+
+    return JsonResponse({"error": "POST request required"}, status=400)
+
