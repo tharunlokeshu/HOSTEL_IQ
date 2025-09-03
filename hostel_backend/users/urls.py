@@ -13,6 +13,7 @@ urlpatterns = [
     path('admin/all-students/', AllStudentsView.as_view(), name='all-students'),
     path('admin/delete-student/<int:student_id>/', DeleteStudentView.as_view(), name='delete-student'),
     path('create-admin/', create_admin, name='create_admin'),
+
 ]
 
 
