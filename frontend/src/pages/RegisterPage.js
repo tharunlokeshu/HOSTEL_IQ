@@ -108,6 +108,26 @@ export default function RegisterPage() {
             {loadingStudent ? 'Registering...' : 'Register'}
           </button>
         </form>
+
+        {/* Sign In Link */}
+        <div
+          style={{
+            width: '100%',
+            textAlign: 'center',
+            marginTop: '15px',
+            fontSize: '14px',
+          }}
+        >
+          <p>
+            Already have an account?{' '}
+            <span
+              style={{ color: '#007bff', cursor: 'pointer', fontWeight: 'bold' }}
+              onClick={() => navigate('/login')}
+            >
+              Sign In
+            </span>
+          </p>
+        </div>
       </div>
     </div>
   );

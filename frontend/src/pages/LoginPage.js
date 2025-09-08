@@ -134,6 +134,26 @@ export default function LoginPage() {
           />
           <button type="submit">Login</button>
         </form>
+
+        {/* Sign Up Link */}
+        <div
+          style={{
+            width: '100%',
+            textAlign: 'center',
+            marginTop: '20px',
+            fontSize: '14px',
+          }}
+        >
+          <p>
+            Don't have an account?{' '}
+            <span
+              style={{ color: '#007bff', cursor: 'pointer', fontWeight: 'bold' }}
+              onClick={() => navigate('/register')}
+            >
+              Sign Up
+            </span>
+          </p>
+        </div>
       </div>
     </div>
   );
