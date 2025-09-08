@@ -2,14 +2,20 @@ import os
 from pathlib import Path
 from datetime import timedelta
 
-# Base directory
+# -------------------------
+# BASE DIRECTORY
+# -------------------------
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Security
+# -------------------------
+# SECURITY
+# -------------------------
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "django-insecure-default-secret")
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
-# Allowed hosts
+# -------------------------
+# ALLOWED HOSTS
+# -------------------------
 ALLOWED_HOSTS = [
     "pragati-hostel.onrender.com",
     "localhost",
@@ -17,14 +23,18 @@ ALLOWED_HOSTS = [
     "hostel-iq.onrender.com",
 ]
 
-# CSRF Trusted Origins
+# -------------------------
+# CSRF TRUSTED ORIGINS
+# -------------------------
 CSRF_TRUSTED_ORIGINS = [
     "https://pragati-hostel.onrender.com",
     "https://pragati-hostel-x6p0.onrender.com",
     "https://hostel-iq.onrender.com",
 ]
 
-# Applications
+# -------------------------
+# INSTALLED APPS
+# -------------------------
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -41,7 +51,9 @@ INSTALLED_APPS = [
     'social_django',
 ]
 
-# Middleware
+# -------------------------
+# MIDDLEWARE
+# -------------------------
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",  # Serve static files in production
@@ -55,7 +67,9 @@ MIDDLEWARE = [
     'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
-# CORS settings
+# -------------------------
+# CORS SETTINGS
+# -------------------------
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
     "https://pragati-hostel.onrender.com",
@@ -64,14 +78,18 @@ CORS_ALLOWED_ORIGINS = [
     "https://hostel-iq.onrender.com",
 ]
 
-# URL configuration
+# -------------------------
+# URL CONFIGURATION
+# -------------------------
 ROOT_URLCONF = "hostel_backend.urls"
 
-# Templates (React build included)
+# -------------------------
+# TEMPLATES (React Build)
+# -------------------------
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / "frontend" / "build"],  # ✅ React build folder
+        "DIRS": [BASE_DIR / "frontend" / "build"],  # React build folder
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -83,14 +101,27 @@ TEMPLATES = [
         },
     },
 ]
+
+
+# -------------------------
+# WSGI APPLICATION
+# -------------------------
+WSGI_APPLICATION = "hostel_backend.wsgi.application"
+
+# -------------------------
+# DATABASE (POSTGRESQL - RENDER)
+# -------------------------
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'hostel_f1we',  # database name
-        'USER': 'hostel_f1we_user',  # username
-        'PASSWORD': 'JaVRhtRySwzQq6dGdQOnuB0nhWUXBsGB',  # password
-        'HOST': 'dpg-d2s8ftqdbo4c73et5mvg-a.oregon-postgres.render.com',  # external host
-        'PORT': '5432',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "hostel_f1we",
+        "USER": "hostel_f1we_user",
+        "PASSWORD": "JaVRhtRySwzQq6dGdQOnuB0nhWUXBsGB",
+        "HOST": "dpg-d2s8ftqdbo4c73et5mvg-a.oregon-postgres.render.com",
+        "PORT": "5432",
+        "OPTIONS": {
+            "sslmode": "require",  # ✅ SSL required
+        },
     }
 }
 DATABASES = {
@@ -100,7 +131,9 @@ DATABASES = {
         }
     }
 
-# Password validation
+# -------------------------
+# PASSWORD VALIDATION
+# -------------------------
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
@@ -108,31 +141,43 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
-# Internationalization
+# -------------------------
+# INTERNATIONALIZATION
+# -------------------------
 LANGUAGE_CODE = "en-us"
 TIME_ZONE = "Asia/Kolkata"
 USE_I18N = True
 USE_TZ = True
 
-# Static files (React + Django)
+# -------------------------
+# STATIC FILES (REACT + DJANGO)
+# -------------------------
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_DIRS = [
-    BASE_DIR / "frontend" / "build" / "static",  # ✅ React static files
+    BASE_DIR / "frontend" / "build" / "static",
 ]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-# Media files
+# -------------------------
+# MEDIA FILES
+# -------------------------
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
-# Default primary key
+# -------------------------
+# DEFAULT AUTO FIELD
+# -------------------------
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# Custom user model
+# -------------------------
+# CUSTOM USER MODEL
+# -------------------------
 AUTH_USER_MODEL = "users.CustomUser"
 
-# Django REST Framework
+# -------------------------
+# DJANGO REST FRAMEWORK
+# -------------------------
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
@@ -146,7 +191,9 @@ REST_FRAMEWORK = {
     ],
 }
 
-# JWT settings
+# -------------------------
+# SIMPLE JWT SETTINGS
+# -------------------------
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
