@@ -1,3 +1,4 @@
+/* ===== Base Styles ===== */
 .student-dashboard {
   background: linear-gradient(135deg, #101426, #1f1c2c);
   min-height: 100vh;
@@ -62,4 +63,90 @@
 
 .logout:hover {
   background: rgba(255, 0, 0, 0.25);
+}
+
+/* ===== Mobile Responsiveness ===== */
+@media (max-width: 768px) {
+  .student-dashboard {
+    padding: 3rem 1.5rem;
+  }
+
+  .dashboard-heading {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .card {
+    padding: 1.5rem 1rem;
+  }
+
+  .card span {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .student-dashboard {
+    padding: 2rem 1rem;
+  }
+
+  .dashboard-heading {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card {
+    padding: 1rem 0.8rem;
+  }
+
+  .card span {
+    font-size: 0.95rem;
+  }
+
+  .card-grid {
+    gap: 1rem;
+  }
+}
+
+/* ===== Very Small Phones (320px and below) ===== */
+@media (max-width: 360px) {
+  .student-dashboard {
+    padding: 1.5rem 0.8rem;
+  }
+
+  .dashboard-heading {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr; /* stack cards vertically */
+    gap: 0.8rem;
+  }
+
+  .card {
+    padding: 0.8rem 0.6rem;
+    border-radius: 15px;
+  }
+
+  .card span {
+    font-size: 0.9rem;
+  }
+
+  .card svg {
+    width: 40px; /* smaller icons */
+    height: 40px;
+  }
+
+  /* Remove hover effects for mobile */
+  .card:hover {
+    transform: none;
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5);
+  }
+
+  .card:hover svg {
+    transform: none;
+    filter: none;
+  }
 }
