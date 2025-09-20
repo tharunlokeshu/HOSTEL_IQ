@@ -61,8 +61,9 @@ function App() {
         <Route path="/admin/dashboard-analytics" element={<DashboardAnalytics />} />
         <Route path="/admin/hostel-rooms" element={<HostelRooms />} />
         <Route path="/admin/export-reports" element={<AdminExportReports />} />
-        {/* Redirect to home if no route matches */}
-       
+
+        {/* Catch-all route for SPA - this handles direct URL access and page refreshes */}
+        <Route path="*" element={<HomePage />} />
       </Routes>
     </Router>
   );
