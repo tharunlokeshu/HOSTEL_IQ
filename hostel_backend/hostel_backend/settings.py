@@ -21,6 +21,7 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "hostel-iq.onrender.com",
+    "https://hostel-iq.vercel.app",
 ]
 
 # -------------------------
@@ -30,7 +31,7 @@ CSRF_TRUSTED_ORIGINS = [
     "https://pragati-hostel.onrender.com",
     "https://pragati-hostel-x6p0.onrender.com",
     "https://hostel-iq.onrender.com",
-    "https://hosteliq.netlify.app"
+    "https://hostel-iq.vercel.app",
 ]
 
 # -------------------------
