@@ -30,6 +30,7 @@ CSRF_TRUSTED_ORIGINS = [
     "https://pragati-hostel.onrender.com",
     "https://pragati-hostel-x6p0.onrender.com",
     "https://hostel-iq.onrender.com",
+    "https://hosteliq.netlify.app"
 ]
 
 # -------------------------
@@ -76,6 +77,7 @@ CORS_ALLOWED_ORIGINS = [
     "https://pragati-hostel-x6p0.onrender.com",
     "http://localhost:3000",
     "https://hostel-iq.onrender.com",
+    "https://hosteliq.netlify.app"
 ]
 
 # -------------------------

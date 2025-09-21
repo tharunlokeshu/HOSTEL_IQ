@@ -63,7 +63,7 @@ function App() {
         <Route path="/admin/export-reports" element={<AdminExportReports />} />
 
         {/* Catch-all route for SPA - this handles direct URL access and page refreshes */}
-        <Route path="*" element={<HomePage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );
