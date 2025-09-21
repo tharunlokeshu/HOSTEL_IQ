@@ -19,3 +19,8 @@ pytz==2025.2
 six==1.17.0
 tzdata==2025.2
 psycopg2-binary>=2.9.9
+
+# Social Authentication Dependencies
+social-auth-core>=4.5.0
+social-auth-app-django>=5.4.0
+social-auth-google-oauth2>=1.0.0
