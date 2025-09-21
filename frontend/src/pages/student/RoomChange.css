@@ -125,3 +125,167 @@
   font-size: 0.9em;
   color: hsl(0, 0%, 40%);
 }
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .room-change-container {
+    margin: 20px auto;
+    padding: 25px 20px;
+    max-width: 95%;
+    border-radius: 10px;
+  }
+
+  .room-change-title {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    margin-bottom: 20px;
+  }
+
+  .room-change-form {
+    gap: 12px;
+  }
+
+  .room-change-form input,
+  .room-change-form textarea {
+    padding: 8px 10px;
+    font-size: 16px; /* Prevents zoom on iOS */
+    border-radius: 6px;
+  }
+
+  .room-change-form textarea {
+    min-height: 70px;
+  }
+
+  .submit-button {
+    padding: 10px;
+    font-size: 15px;
+    min-height: 44px; /* Touch-friendly */
+    border-radius: 6px;
+  }
+
+  .room-change-history {
+    margin-top: 30px;
+  }
+
+  .room-change-history h3 {
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    margin-bottom: 15px;
+  }
+
+  .history-card {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+  }
+
+  .status {
+    text-align: left;
+  }
+
+  .date {
+    font-size: 0.85em;
+  }
+}
+
+@media (max-width: 480px) {
+  .room-change-container {
+    margin: 15px auto;
+    padding: 20px 15px;
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  .room-change-title {
+    font-size: clamp(1.3rem, 8vw, 1.8rem);
+    margin-bottom: 15px;
+  }
+
+  .room-change-form {
+    gap: 10px;
+  }
+
+  .room-change-form input,
+  .room-change-form textarea {
+    padding: 6px 8px;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+
+  .room-change-form textarea {
+    min-height: 60px;
+  }
+
+  .submit-button {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+
+  .room-change-history {
+    margin-top: 25px;
+  }
+
+  .room-change-history h3 {
+    font-size: clamp(1.2rem, 6vw, 1.5rem);
+    margin-bottom: 12px;
+  }
+
+  .history-card {
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+  }
+
+  .date {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 360px) {
+  .room-change-container {
+    padding: 15px 12px;
+  }
+
+  .room-change-title {
+    font-size: clamp(1.2rem, 10vw, 1.5rem);
+  }
+
+  .room-change-form input,
+  .room-change-form textarea {
+    padding: 5px 6px;
+  }
+
+  .room-change-form textarea {
+    min-height: 50px;
+  }
+
+  .submit-button {
+    padding: 6px;
+    font-size: 13px;
+  }
+
+  .history-card {
+    padding: 8px 10px;
+  }
+}
+
+/* Large screens optimization */
+@media (min-width: 1024px) {
+  .room-change-container {
+    max-width: 900px;
+    padding: 40px 50px;
+  }
+
+  .room-change-title {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+  }
+
+  .room-change-history h3 {
+    font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+  }
+
+  .history-card {
+    padding: 18px 25px;
+  }
+}

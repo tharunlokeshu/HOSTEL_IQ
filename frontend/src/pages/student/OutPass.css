@@ -1,41 +1,45 @@
-/* Container */
+/* Enhanced Responsive Student OutPass */
 .outpass-form-container {
   max-width: 900px;
-  margin: 40px auto;
-  padding: 28px;
+  margin: clamp(2rem, 5vw, 4rem) auto;
+  padding: clamp(1.5rem, 4vw, 2.8rem) clamp(1.5rem, 4vw, 2.8rem);
   background: #ffffff;
   border-radius: 14px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #111;
+  box-sizing: border-box;
 }
 
 /* Title */
 .form-title {
-  font-size: 24px;
+  font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: 600;
   color: #111;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
 }
 
 /* Form */
 .outpass-form {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  margin-bottom: 24px;
+  gap: clamp(0.75rem, 2vw, 1.4rem);
+  margin-bottom: clamp(1.5rem, 4vw, 2.4rem);
 }
 
 /* Input + Textarea */
 .form-input {
-  padding: 12px 14px;
+  padding: clamp(0.75rem, 2vw, 1.2rem) clamp(0.875rem, 2.5vw, 1.4rem);
   border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 15px;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
   color: #111;
   background: #f9f9f9;
   transition: border 0.3s ease, background 0.3s ease;
+  box-sizing: border-box;
+  min-height: 44px; /* Touch-friendly */
+  touch-action: manipulation;
 }
 
 .form-input:focus {
@@ -46,7 +50,7 @@
 
 /* Button */
 .submit-button {
-  padding: 12px;
+  padding: clamp(0.75rem, 2vw, 1.2rem);
   background: linear-gradient(135deg, #007bff, #0056b3);
   color: #fff;
   font-weight: 600;
@@ -54,6 +58,10 @@
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
+  min-height: 44px; /* Touch-friendly */
+  touch-action: manipulation;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  margin-top: clamp(0.5rem, 1.5vw, 1rem);
 }
 
 .submit-button:hover {
@@ -61,41 +69,58 @@
   transform: translateY(-2px);
 }
 
+.submit-button:active {
+  transform: translateY(0);
+}
+
 /* Messages */
 .form-message {
-  margin-top: 10px;
+  margin-top: clamp(0.5rem, 1.5vw, 1rem);
   text-align: center;
   font-weight: 500;
   color: #222;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  padding: clamp(0.5rem, 1.5vw, 0.75rem);
+  border-radius: 6px;
+  background: rgba(0, 123, 255, 0.1);
 }
 
 .error-message {
-  margin-top: 10px;
+  margin-top: clamp(0.5rem, 1.5vw, 1rem);
   color: #d9534f;
   text-align: center;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  padding: clamp(0.5rem, 1.5vw, 0.75rem);
+  border-radius: 6px;
+  background: rgba(217, 83, 79, 0.1);
 }
 
 /* Table */
 .outpass-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
-  font-size: 15px;
+  margin-top: clamp(1rem, 3vw, 2rem);
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
   color: #111;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .outpass-table th,
 .outpass-table td {
-  padding: 12px;
+  padding: clamp(0.75rem, 2vw, 1.2rem) clamp(0.75rem, 2vw, 1rem);
   border-bottom: 1px solid #ddd;
   text-align: center;
   vertical-align: middle;
+  box-sizing: border-box;
 }
 
 .outpass-table th {
   background: #f1f5fb;
   font-weight: 600;
   color: #222;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
 }
 
 .outpass-table tr:hover {
@@ -104,11 +129,14 @@
 
 /* Status badges */
 .status-badge {
-  padding: 6px 12px;
+  padding: clamp(0.25rem, 1vw, 0.6rem) clamp(0.75rem, 2vw, 1.2rem);
   border-radius: 20px;
-  font-size: 13px;
+  font-size: clamp(0.7rem, 2vw, 0.85rem);
   font-weight: 600;
   text-transform: capitalize;
+  display: inline-block;
+  min-height: 32px;
+  line-height: 1.2;
 }
 
 /* Colors for statuses */
@@ -131,99 +159,255 @@
 .outpass-table td svg {
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 4px;
+  padding: clamp(0.25rem, 1vw, 0.4rem);
   background: #fff;
-  width: 150px;
-  height: 150px;
+  width: clamp(90px, 15vw, 150px);
+  height: clamp(90px, 15vw, 150px);
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* QR pamphlet preview (for scanned QR) */
 .qr-pamphlet {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  max-width: 320px;
-  margin: 20px auto;
-  padding: 20px;
+  max-width: clamp(280px, 80vw, 320px);
+  margin: clamp(1rem, 3vw, 2rem) auto;
+  padding: clamp(1rem, 3vw, 2rem);
   border-radius: 12px;
   background: #f9f9f9;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
 .qr-pamphlet h3 {
   margin-top: 0;
   text-align: center;
   color: #007bff;
+  font-size: clamp(1.1rem, 3vw, 1.25rem);
 }
 
 .qr-pamphlet p {
-  margin: 6px 0;
-  font-size: 14px;
+  margin: clamp(0.25rem, 1vw, 0.6rem) 0;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
 }
 
-/* Responsive */
+/* Enhanced Responsive Design */
 @media (max-width: 992px) {
   .outpass-form-container {
-    padding: 20px;
+    padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 3vw, 2rem);
   }
 
   .outpass-table th,
   .outpass-table td {
-    padding: 10px;
-    font-size: 14px;
+    padding: clamp(0.6rem, 1.5vw, 1rem) clamp(0.5rem, 1.5vw, 0.75rem);
+    font-size: clamp(0.8rem, 2vw, 0.875rem);
   }
 
   .submit-button {
-    font-size: 14px;
-    padding: 10px;
+    font-size: clamp(0.8rem, 2vw, 0.875rem);
+    padding: clamp(0.6rem, 1.5vw, 1rem);
   }
 
   .outpass-table td svg {
-    width: 120px;
-    height: 120px;
+    width: clamp(80px, 12vw, 120px);
+    height: clamp(80px, 12vw, 120px);
   }
 }
 
 @media (max-width: 768px) {
   .outpass-form-container {
-    margin: 20px;
-    padding: 16px;
+    margin: clamp(1rem, 3vw, 2rem) clamp(1rem, 3vw, 2rem);
+    padding: clamp(1rem, 3vw, 1.6rem) clamp(1rem, 3vw, 1.6rem);
+    border-radius: 12px;
   }
 
   .form-title {
-    font-size: 20px;
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+    margin-bottom: clamp(0.75rem, 2vw, 1rem);
+  }
+
+  .outpass-form {
+    gap: clamp(0.5rem, 1.5vw, 0.75rem);
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .form-input {
+    padding: clamp(0.6rem, 1.5vw, 0.75rem) clamp(0.75rem, 2vw, 1rem);
+    font-size: clamp(0.8rem, 2vw, 0.875rem);
+  }
+
+  .submit-button {
+    font-size: clamp(0.8rem, 2vw, 0.875rem);
+    padding: clamp(0.6rem, 1.5vw, 0.75rem);
+    margin-top: clamp(0.4rem, 1vw, 0.5rem);
   }
 
   .outpass-table {
-    font-size: 13px;
+    font-size: clamp(0.75rem, 2vw, 0.8rem);
+    margin-top: clamp(0.75rem, 2vw, 1rem);
+  }
+
+  .outpass-table th,
+  .outpass-table td {
+    padding: clamp(0.5rem, 1.5vw, 0.6rem) clamp(0.4rem, 1vw, 0.5rem);
   }
 
   .outpass-table td svg {
-    width: 90px;
-    height: 90px;
+    width: clamp(70px, 10vw, 90px);
+    height: clamp(70px, 10vw, 90px);
   }
 
   .qr-pamphlet {
-    max-width: 240px;
-    padding: 16px;
+    max-width: clamp(240px, 70vw, 280px);
+    padding: clamp(0.75rem, 2vw, 1rem);
+  }
+
+  .qr-pamphlet h3 {
+    font-size: clamp(1rem, 3vw, 1.1rem);
+  }
+
+  .qr-pamphlet p {
+    font-size: clamp(0.75rem, 2vw, 0.8rem);
   }
 }
 
 @media (max-width: 480px) {
-  .outpass-table {
-    font-size: 12px;
+  .outpass-form-container {
+    margin: clamp(0.75rem, 2vw, 1rem) clamp(0.75rem, 2vw, 1rem);
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(0.75rem, 2vw, 1rem);
+    border-radius: 10px;
   }
 
-  .outpass-table td svg {
-    width: 70px;
-    height: 70px;
+  .form-title {
+    font-size: clamp(1.1rem, 4vw, 1.25rem);
+    margin-bottom: clamp(0.5rem, 1.5vw, 0.75rem);
   }
 
-  .qr-pamphlet {
-    max-width: 200px;
-    padding: 12px;
+  .outpass-form {
+    gap: clamp(0.4rem, 1vw, 0.5rem);
+    margin-bottom: clamp(0.75rem, 2vw, 1rem);
+  }
+
+  .form-input {
+    padding: clamp(0.5rem, 1.5vw, 0.6rem) clamp(0.6rem, 1.5vw, 0.75rem);
+    font-size: clamp(0.75rem, 2vw, 0.8rem);
   }
 
   .submit-button {
-    font-size: 13px;
-    padding: 8px;
+    font-size: clamp(0.75rem, 2vw, 0.8rem);
+    padding: clamp(0.5rem, 1.5vw, 0.6rem);
+    margin-top: clamp(0.25rem, 0.5vw, 0.4rem);
+  }
+
+  .outpass-table {
+    font-size: clamp(0.7rem, 2vw, 0.75rem);
+    margin-top: clamp(0.5rem, 1.5vw, 0.75rem);
+  }
+
+  .outpass-table th,
+  .outpass-table td {
+    padding: clamp(0.4rem, 1vw, 0.5rem) clamp(0.25rem, 0.5vw, 0.4rem);
+  }
+
+  .outpass-table td svg {
+    width: clamp(60px, 8vw, 70px);
+    height: clamp(60px, 8vw, 70px);
+  }
+
+  .qr-pamphlet {
+    max-width: clamp(200px, 60vw, 240px);
+    padding: clamp(0.5rem, 1.5vw, 0.75rem);
+  }
+
+  .qr-pamphlet h3 {
+    font-size: clamp(0.9rem, 3vw, 1rem);
+  }
+
+  .qr-pamphlet p {
+    font-size: clamp(0.7rem, 2vw, 0.75rem);
+    margin: clamp(0.2rem, 0.5vw, 0.25rem) 0;
+  }
+
+  .status-badge {
+    padding: clamp(0.2rem, 0.5vw, 0.25rem) clamp(0.5rem, 1.5vw, 0.75rem);
+    font-size: clamp(0.65rem, 2vw, 0.7rem);
+  }
+}
+
+@media (max-width: 360px) {
+  .outpass-form-container {
+    padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(0.5rem, 1.5vw, 0.75rem);
+  }
+
+  .form-title {
+    font-size: clamp(1rem, 4vw, 1.1rem);
+  }
+
+  .form-input {
+    padding: clamp(0.4rem, 1vw, 0.5rem) clamp(0.5rem, 1vw, 0.6rem);
+  }
+
+  .submit-button {
+    padding: clamp(0.4rem, 1vw, 0.5rem);
+  }
+
+  .outpass-table th,
+  .outpass-table td {
+    padding: clamp(0.25rem, 0.5vw, 0.4rem) clamp(0.2rem, 0.4vw, 0.25rem);
+  }
+
+  .outpass-table td svg {
+    width: clamp(50px, 6vw, 60px);
+    height: clamp(50px, 6vw, 60px);
+  }
+
+  .qr-pamphlet {
+    padding: clamp(0.4rem, 1vw, 0.5rem);
+  }
+
+  .qr-pamphlet h3 {
+    font-size: clamp(0.85rem, 3vw, 0.9rem);
+  }
+
+  .qr-pamphlet p {
+    font-size: clamp(0.65rem, 2vw, 0.7rem);
+  }
+}
+
+/* Touch-friendly enhancements */
+@media (hover: hover) {
+  .submit-button:hover {
+    background: linear-gradient(135deg, #0056b3, #00408a);
+    transform: translateY(-2px);
+  }
+
+  .outpass-table tr:hover {
+    background: #f9faff;
+  }
+}
+
+/* Large screens optimization */
+@media (min-width: 1024px) {
+  .outpass-form-container {
+    max-width: 1000px;
+    padding: clamp(2rem, 4vw, 3.5rem) clamp(3rem, 5vw, 4rem);
+  }
+
+  .form-title {
+    font-size: clamp(1.8rem, 3vw, 2.2rem);
+  }
+
+  .outpass-table {
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+  }
+
+  .outpass-table th,
+  .outpass-table td {
+    padding: clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.5rem);
+  }
+
+  .outpass-table td svg {
+    width: clamp(120px, 18vw, 180px);
+    height: clamp(120px, 18vw, 180px);
   }
 }

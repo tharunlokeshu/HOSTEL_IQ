@@ -109,3 +109,163 @@ body, html {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #000; /* global black text */
 }
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .notice-container {
+    padding: 25px 20px;
+    max-width: 95%;
+    margin: 20px auto;
+  }
+
+  .notice-container h2 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    margin-bottom: 15px;
+  }
+
+  .notice-form {
+    gap: 12px;
+  }
+
+  .notice-form input,
+  .notice-form textarea {
+    padding: 10px 12px;
+    font-size: 16px; /* Prevents zoom on iOS */
+    border-radius: 6px;
+  }
+
+  .notice-form button {
+    padding: 10px;
+    font-size: 15px;
+    min-height: 44px; /* Touch-friendly */
+    border-radius: 6px;
+  }
+
+  .notice-list {
+    margin-top: 30px;
+  }
+
+  .notice-list h3 {
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    margin-bottom: 12px;
+  }
+
+  .notice-item {
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+  }
+
+  .notice-item strong {
+    font-size: 15px;
+  }
+
+  .notice-item p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .notice-container {
+    padding: 20px 15px;
+    max-width: 100%;
+    margin: 15px auto;
+  }
+
+  .notice-container h2 {
+    font-size: clamp(1.3rem, 8vw, 1.8rem);
+    margin-bottom: 12px;
+  }
+
+  .notice-form {
+    gap: 10px;
+  }
+
+  .notice-form input,
+  .notice-form textarea {
+    padding: 8px 10px;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+
+  .notice-form button {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+
+  .notice-list {
+    margin-top: 25px;
+  }
+
+  .notice-list h3 {
+    font-size: clamp(1.2rem, 6vw, 1.5rem);
+    margin-bottom: 10px;
+  }
+
+  .notice-item {
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+
+  .notice-item strong {
+    font-size: 14px;
+  }
+
+  .notice-item p {
+    font-size: 13px;
+  }
+
+  .notice-item small {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .notice-container {
+    padding: 15px 12px;
+  }
+
+  .notice-container h2 {
+    font-size: clamp(1.2rem, 10vw, 1.5rem);
+  }
+
+  .notice-form input,
+  .notice-form textarea {
+    padding: 6px 8px;
+  }
+
+  .notice-form button {
+    padding: 6px;
+    font-size: 13px;
+  }
+
+  .notice-item {
+    padding: 8px 10px;
+  }
+
+  .notice-item strong {
+    font-size: 13px;
+  }
+
+  .notice-item p {
+    font-size: 12px;
+  }
+}
+
+/* Large screens optimization */
+@media (min-width: 1024px) {
+  .notice-container {
+    max-width: 800px;
+    padding: 50px 60px;
+  }
+
+  .notice-container h2 {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+  }
+
+  .notice-list h3 {
+    font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+  }
+}

@@ -1,15 +1,19 @@
+/* Enhanced Responsive Admin OutPass Requests */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 /* ================= Container ================= */
 .admin-outpass-container {
   min-height: 100vh;
-  padding: 40px 20px;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
   font-family: 'Inter', sans-serif;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   background: #f5f5f5;
   color: #000000; /* all text black */
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .admin-outpass-content {
@@ -17,7 +21,7 @@
   max-width: 1200px;
   border-radius: 20px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.15), inset 0 0 30px rgba(0,0,0,0.05);
-  padding: 30px 40px;
+  padding: clamp(1.5rem, 4vw, 3rem) clamp(2rem, 5vw, 4rem);
   box-sizing: border-box;
   background: #ffffff;
   color: #000000;
@@ -25,20 +29,21 @@
 
 .admin-title {
   text-align: center;
-  font-size: 2.4rem;
-  margin-bottom: 25px;
+  font-size: clamp(1.75rem, 4vw, 2.4rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
   color: #000000;
   user-select: none;
+  font-weight: 700;
 }
 
 /* ================= Alerts ================= */
 .admin-error-box,
 .admin-success-box {
-  padding: 12px 16px;
+  padding: clamp(0.75rem, 2vw, 1.2rem) clamp(1rem, 3vw, 1.6rem);
   border-radius: 12px;
-  margin-bottom: 20px;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
   text-align: center;
   background: #f0f0f0;
   color: #000000;
@@ -49,9 +54,9 @@
 /* ================= Loading ================= */
 .admin-loading {
   text-align: center;
-  font-size: 1.1rem;
+  font-size: clamp(0.875rem, 2.5vw, 1.1rem);
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
   color: #000000;
   user-select: none;
 }
@@ -67,7 +72,7 @@
 .admin-table {
   width: 100%;
   border-collapse: separate;
-  border-spacing: 0 12px;
+  border-spacing: 0 clamp(0.75rem, 2vw, 1.2rem);
   border-radius: 16px;
   box-shadow: 0 6px 12px rgba(0,0,0,0.05);
   user-select: none;
@@ -78,17 +83,18 @@
 /* Table Head */
 .admin-thead tr {
   font-weight: 700;
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .admin-thead th {
-  padding: 14px 16px;
+  padding: clamp(0.75rem, 2vw, 1.4rem) clamp(1rem, 3vw, 1.6rem);
   text-align: center;
   border-right: 1px solid rgba(0,0,0,0.2);
   white-space: nowrap;
   color: #000000;
+  font-weight: 700;
 }
 
 .admin-thead th:last-child {
@@ -110,9 +116,9 @@
 }
 
 .admin-table tbody td {
-  padding: 12px 14px;
+  padding: clamp(0.75rem, 2vw, 1.2rem) clamp(0.75rem, 2vw, 1.4rem);
   text-align: center;
-  font-size: 0.95rem;
+  font-size: clamp(0.875rem, 2.5vw, 0.95rem);
   vertical-align: middle;
   border-right: 1px solid rgba(0,0,0,0.2);
   white-space: nowrap;
@@ -131,8 +137,8 @@
 /* Empty state */
 .admin-empty {
   text-align: center;
-  padding: 20px 0;
-  font-size: 1.1rem;
+  padding: clamp(1rem, 3vw, 2rem) 0;
+  font-size: clamp(0.875rem, 2.5vw, 1.1rem);
   font-style: italic;
   color: #000000;
 }
@@ -140,31 +146,33 @@
 /* ================= Status Badges ================= */
 .status-badge {
   display: inline-block;
-  padding: 5px 12px;
+  padding: clamp(0.4rem, 1vw, 0.5rem) clamp(0.75rem, 2vw, 1.2rem);
   border-radius: 20px;
   font-weight: 700;
   text-transform: capitalize;
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 2vw, 0.85rem);
   box-shadow: 0 0 4px rgba(0,0,0,0.1);
   user-select: none;
   color: #000000;
   background: #f0f0f0;
+  min-height: 32px;
+  line-height: 1.2;
 }
 
 /* ================= Action Buttons ================= */
 .admin-actions {
   display: flex;
-  gap: 10px;
+  gap: clamp(0.5rem, 1.5vw, 1rem);
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .admin-actions button {
-  padding: 10px;
+  padding: clamp(0.75rem, 2vw, 1rem);
   border: none;
   border-radius: 28px;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   user-select: none;
@@ -172,12 +180,20 @@
   min-width: 100px;
   background: #f0f0f0;
   color: #000000;
+  min-height: 44px; /* Touch-friendly */
+  touch-action: manipulation;
+  transition: transform 0.2s ease;
+}
+
+.admin-actions button:hover {
+  transform: translateY(-2px);
 }
 
 /* Final status text */
 .status-final {
   color: #000000;
   font-weight: 600;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
 }
 
 /* ================= Scrollbar styling ================= */
@@ -192,27 +208,42 @@
   background: rgba(0,0,0,0.2);
 }
 
-/* ================= Responsive ================= */
+/* ================= Enhanced Responsive ================= */
 
 /* Tablets & Medium Screens */
 @media (max-width: 1024px) {
   .admin-outpass-content {
-    padding: 20px 25px;
+    padding: clamp(1rem, 3vw, 2rem) clamp(1.5rem, 4vw, 2.5rem);
   }
 
   .admin-table tbody td,
   .admin-thead th {
-    font-size: 0.9rem;
-    padding: 10px 8px;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    padding: clamp(0.6rem, 1.5vw, 1rem) clamp(0.5rem, 1.5vw, 0.8rem);
   }
 
   .admin-title {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
   }
 }
 
-/* Mobile First: Stack Table */
+/* Enhanced Mobile Table Layout */
 @media (max-width: 768px) {
+  .admin-outpass-container {
+    padding: clamp(1rem, 3vw, 2rem) clamp(0.75rem, 2vw, 1rem);
+  }
+
+  .admin-outpass-content {
+    padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 3vw, 1.5rem);
+    border-radius: 16px;
+  }
+
+  .admin-title {
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  /* Hide table header */
   .admin-table thead {
     display: none;
   }
@@ -226,61 +257,121 @@
   }
 
   .admin-table tr {
-    margin-bottom: 15px;
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    padding: 12px 15px;
+    padding: clamp(0.75rem, 2vw, 1.2rem) clamp(1rem, 3vw, 1.5rem);
     transition: transform 0.2s ease;
+    background: #ffffff;
+    position: relative;
   }
 
   .admin-table td {
-    text-align: right;
-    padding-left: 50%;
-    position: relative;
+    text-align: left;
+    padding: clamp(0.5rem, 1.5vw, 0.75rem) 0;
     border: none;
     white-space: normal;
-    font-size: 0.95rem;
+    font-size: clamp(0.875rem, 2.5vw, 0.95rem);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 2.5rem;
+  }
+
+  .admin-table td:last-child {
+    border-bottom: none;
   }
 
   .admin-table td::before {
     content: attr(data-label);
-    position: absolute;
-    left: 15px;
-    top: 12px;
+    position: static;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    font-size: 0.85rem;
+    font-size: clamp(0.75rem, 2vw, 0.85rem);
+    color: #333;
+    margin-right: auto;
+    flex-shrink: 0;
+  }
+
+  .admin-table td::after {
+    content: attr(data-content);
+    text-align: right;
+    flex-shrink: 0;
+    max-width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Special handling for action buttons */
+  .admin-table td:has(.admin-actions) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: clamp(0.5rem, 1.5vw, 0.8rem);
+    min-height: auto;
+  }
+
+  .admin-table td:has(.admin-actions)::before {
+    position: absolute;
+    top: clamp(0.75rem, 2vw, 1rem);
+    left: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .admin-table td:has(.admin-actions)::after {
+    display: none;
   }
 
   .admin-actions {
     flex-direction: column;
-    gap: 8px;
+    gap: clamp(0.5rem, 1.5vw, 0.8rem);
+    width: 100%;
+    margin-top: clamp(0.5rem, 1.5vw, 0.8rem);
   }
 
   .admin-actions button {
     min-width: 100%;
-    font-size: 1rem;
-    padding: 10px 0;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    padding: clamp(0.75rem, 2vw, 1rem) 0;
   }
 }
 
 /* Extra small screens (<480px) */
 @media (max-width: 480px) {
+  .admin-outpass-container {
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(0.5rem, 1vw, 0.75rem);
+  }
+
   .admin-title {
-    font-size: 1.8rem;
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+    margin-bottom: clamp(0.75rem, 2vw, 1rem);
   }
 
   .admin-actions button {
-    font-size: 0.95rem;
-    padding: 8px 0;
+    font-size: clamp(0.8rem, 2vw, 0.95rem);
+    padding: clamp(0.6rem, 1.5vw, 0.8rem) 0;
   }
 
   .admin-table td::before {
-    font-size: 0.8rem;
+    font-size: clamp(0.7rem, 2vw, 0.8rem);
+    left: clamp(0.75rem, 2vw, 1rem);
+    top: clamp(0.5rem, 1.5vw, 0.75rem);
   }
 
   .admin-table tr {
-    padding: 10px 12px;
+    padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(0.75rem, 2vw, 1rem);
+  }
+
+  .admin-table tbody td,
+  .admin-thead th {
+    font-size: clamp(0.8rem, 2vw, 0.875rem);
+    padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(0.4rem, 1vw, 0.6rem);
+  }
+}
+
+/* Touch-friendly enhancements */
+@media (hover: hover) {
+  .admin-actions button:hover {
+    transform: translateY(-2px);
   }
 }

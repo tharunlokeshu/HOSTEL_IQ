@@ -1,9 +1,10 @@
+/* Enhanced Responsive Admin Food Feedback */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 .feedback-container {
   font-family: 'Inter', sans-serif;
   min-height: 100vh;
-  padding: 50px 20px;
+  padding: clamp(2.5rem, 6vw, 5rem) clamp(1rem, 3vw, 2rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,6 +12,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .feedback-table-wrapper {
@@ -20,10 +24,11 @@
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(0,0,0,0.1);
   max-width: 100%;
-  width: 1200px;
+  width: 100%;
   overflow-x: auto;
-  padding: 25px 20px;
+  padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 3vw, 2rem);
   transition: box-shadow 0.3s ease;
+  box-sizing: border-box;
 }
 
 .feedback-table-wrapper:hover {
@@ -31,9 +36,9 @@
 }
 
 .feedback-title {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
-  margin-bottom: 40px;
+  margin-bottom: clamp(2rem, 5vw, 4rem);
   letter-spacing: 1.5px;
   user-select: none;
   text-align: center;
@@ -42,8 +47,8 @@
 .feedback-table {
   width: 100%;
   border-collapse: separate;
-  border-spacing: 0 14px;
-  font-size: 1rem;
+  border-spacing: 0 clamp(0.75rem, 2vw, 1.4rem);
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
   user-select: text;
   min-width: 700px;
 }
@@ -56,12 +61,14 @@
 
 .feedback-table thead th {
   font-weight: 700;
-  padding: 18px 24px;
+  padding: clamp(1rem, 3vw, 1.8rem) clamp(1.5rem, 4vw, 2.4rem);
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   border-right: 1px solid rgba(0,0,0,0.08);
   cursor: default;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  white-space: nowrap;
 }
 
 .feedback-table thead th:last-child {
@@ -82,7 +89,7 @@
 }
 
 .feedback-table tbody td {
-  padding: 14px 24px;
+  padding: clamp(0.75rem, 2vw, 1.4rem) clamp(1.5rem, 4vw, 2.4rem);
   text-align: center;
   vertical-align: middle;
   border-right: 1px solid rgba(0,0,0,0.05);
@@ -90,55 +97,30 @@
   max-width: 200px;
   word-break: break-word;
   user-select: text;
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
 }
 
 .feedback-table tbody td:last-child {
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 2vw, 0.85rem);
   font-style: italic;
 }
 
 .feedback-table tbody td:nth-child(4) {
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: clamp(1rem, 3vw, 1.15rem);
 }
 
+/* Enhanced Mobile Table Layout */
 @media (max-width: 768px) {
   .feedback-table-wrapper {
     width: 100%;
-    padding: 15px 10px;
-  }
-  .feedback-table {
-    font-size: 0.9rem;
-    min-width: 600px;
-  }
-  .feedback-title {
-    font-size: 2.2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .feedback-table {
-    min-width: 500px;
-  }
-  .feedback-table thead th,
-  .feedback-table tbody td {
-    padding: 10px 12px;
-  }
-  .feedback-title {
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-  }
-}
-/* Mobile-first responsive stacking for feedback table */
-@media (max-width: 768px) {
-  .feedback-table-wrapper {
-    width: 100%;
-    padding: 15px 10px;
+    padding: clamp(1rem, 3vw, 1.5rem) clamp(0.75rem, 2vw, 1rem);
+    border-radius: 16px;
   }
 
   .feedback-title {
-    font-size: 2.2rem;
+    font-size: clamp(1.75rem, 4vw, 2.2rem);
+    margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
   }
 
   /* Hide table header */
@@ -155,10 +137,10 @@
   }
 
   .feedback-table tr {
-    margin-bottom: 15px;
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    padding: 12px 15px;
+    padding: clamp(0.75rem, 2vw, 1.2rem) clamp(1rem, 3vw, 1.5rem);
     background: rgba(0,0,0,0.05); /* subtle card effect */
     transition: transform 0.2s ease;
   }
@@ -174,35 +156,86 @@
     position: relative;
     border: none;
     white-space: normal;
-    font-size: 0.95rem;
+    font-size: clamp(0.875rem, 2.5vw, 0.95rem);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+
+  .feedback-table td:last-child {
+    border-bottom: none;
   }
 
   /* Add labels for each cell */
   .feedback-table td::before {
     content: attr(data-label);
     position: absolute;
-    left: 15px;
-    top: 12px;
+    left: clamp(1rem, 3vw, 1.5rem);
+    top: clamp(0.75rem, 2vw, 1.2rem);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    font-size: 0.85rem;
+    font-size: clamp(0.75rem, 2vw, 0.85rem);
+    color: #333;
   }
 
   /* Adjust last-child text */
   .feedback-table td:last-child {
-    font-size: 0.85rem;
+    font-size: clamp(0.75rem, 2vw, 0.85rem);
     font-style: italic;
+  }
+
+  .feedback-table tbody td:nth-child(4) {
+    font-weight: 700;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
   }
 }
 
 @media (max-width: 480px) {
+  .feedback-container {
+    padding: clamp(1.5rem, 4vw, 2.5rem) clamp(0.75rem, 2vw, 1rem);
+  }
+
   .feedback-title {
-    font-size: 1.8rem;
-    margin-bottom: 25px;
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .feedback-table-wrapper {
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(0.5rem, 1.5vw, 0.75rem);
+  }
+
+  .feedback-table tr {
+    padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(0.75rem, 2vw, 1rem);
+  }
+
+  .feedback-table td {
+    padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(0.75rem, 2vw, 1rem);
   }
 
   .feedback-table td::before {
-    font-size: 0.8rem;
+    font-size: clamp(0.7rem, 2vw, 0.8rem);
+    left: clamp(0.75rem, 2vw, 1rem);
+    top: clamp(0.5rem, 1.5vw, 0.75rem);
   }
+}
+
+/* Touch-friendly enhancements */
+@media (hover: hover) {
+  .feedback-table tbody tr:hover {
+    transform: translateX(5px);
+    box-shadow: 0 0 20px 4px rgba(0,0,0,0.2);
+  }
+}
+
+/* Scrollbar styling for webkit browsers */
+.feedback-table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.feedback-table-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.feedback-table-wrapper::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: rgba(0,0,0,0.2);
 }

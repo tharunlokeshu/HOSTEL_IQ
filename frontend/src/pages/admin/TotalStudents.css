@@ -113,3 +113,178 @@ tbody tr:hover {
     transform: translateY(0);
   }
 }
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .container {
+    margin: 20px auto;
+    padding: 20px 15px;
+    max-width: 95%;
+    border-radius: 12px;
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    margin-bottom: 15px;
+  }
+
+  h3 {
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    margin-bottom: 12px;
+  }
+
+  form {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    padding: 10px 12px;
+    font-size: 16px; /* Prevents zoom on iOS */
+    border-radius: 8px;
+  }
+
+  button[type="submit"] {
+    padding: 10px;
+    font-size: 15px;
+    min-height: 44px; /* Touch-friendly */
+    border-radius: 8px;
+  }
+
+  table {
+    margin-top: 20px;
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 10px 8px;
+    font-size: 0.85rem;
+  }
+
+  .error {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 15px auto;
+    padding: 15px 10px;
+    max-width: 98%;
+  }
+
+  h2 {
+    font-size: clamp(1.3rem, 8vw, 1.8rem);
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-size: clamp(1.1rem, 6vw, 1.3rem);
+    margin-bottom: 10px;
+  }
+
+  form {
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    padding: 8px 10px;
+    font-size: 16px;
+    border-radius: 6px;
+  }
+
+  button[type="submit"] {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 6px;
+  }
+
+  table {
+    margin-top: 15px;
+    border-radius: 8px;
+  }
+
+  th, td {
+    padding: 8px 6px;
+    font-size: 0.8rem;
+  }
+
+  thead {
+    display: none; /* Hide header on mobile */
+  }
+
+  tbody tr {
+    display: block;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  tbody td {
+    display: block;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+  }
+
+  tbody td:before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 10px;
+    color: #666;
+  }
+
+  tbody tr td:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding: 12px 8px;
+  }
+
+  h2 {
+    font-size: clamp(1.2rem, 10vw, 1.5rem);
+  }
+
+  h3 {
+    font-size: clamp(1rem, 8vw, 1.2rem);
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    padding: 6px 8px;
+  }
+
+  button[type="submit"] {
+    padding: 6px;
+    font-size: 13px;
+  }
+
+  th, td {
+    padding: 6px 4px;
+    font-size: 0.75rem;
+  }
+}
+
+/* Large screens optimization */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    padding: 40px 50px;
+  }
+
+  h2 {
+    font-size: clamp(2.5rem, 4vw, 3rem);
+  }
+
+  h3 {
+    font-size: clamp(1.8rem, 3vw, 2.2rem);
+  }
+}

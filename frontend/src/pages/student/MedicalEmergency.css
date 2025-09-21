@@ -1,11 +1,14 @@
-/* Full page background */
+/* Enhanced Responsive Student Medical Emergency */
 .medical-emergency-page {
   background-color: #f2f2f2;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: start;
-  padding: 40px 0;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
+  font-family: 'Segoe UI', sans-serif;
+  color: #111; /* Default text color */
+  box-sizing: border-box;
 }
 
 /* Form container */
@@ -13,98 +16,316 @@
   width: 100%;
   max-width: 600px;
   background-color: #ffffff;
-  padding: 25px;
+  padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1.5rem, 4vw, 2.5rem);
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  font-family: 'Segoe UI', sans-serif;
-  color: #111; /* Default text color */
+  box-sizing: border-box;
 }
 
 /* Headings */
 .title {
   text-align: center;
   color: #111;
-  margin-bottom: 20px;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
 }
 
 .sub-title {
-  margin-top: 30px;
+  margin-top: clamp(1.5rem, 4vw, 3rem);
   color: #222;
   border-bottom: 2px solid #ccc;
-  padding-bottom: 4px;
+  padding-bottom: clamp(0.25rem, 1vw, 0.4rem);
+  font-size: clamp(1.1rem, 3vw, 1.25rem);
+  font-weight: 600;
 }
 
 /* Alerts */
 .error {
   color: #d63031;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  padding: clamp(0.5rem, 1.5vw, 0.75rem);
+  border-radius: 6px;
+  background: rgba(214, 48, 49, 0.1);
 }
 
 .success {
   color: #27ae60;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  padding: clamp(0.5rem, 1.5vw, 0.75rem);
+  border-radius: 6px;
+  background: rgba(39, 174, 96, 0.1);
 }
 
 /* Form */
 .medical-form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: clamp(0.75rem, 2vw, 1.2rem);
 }
 
 .medical-form input,
 .medical-form textarea,
 .medical-form select {
-  padding: 10px;
-  font-size: 14px;
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(0.875rem, 2.5vw, 1.2rem);
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
   border-radius: 6px;
   border: 1px solid #bbb;
   background-color: #fff;
   color: #111; /* Input text */
+  box-sizing: border-box;
+  min-height: 44px; /* Touch-friendly */
+  touch-action: manipulation;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.medical-form input:focus,
+.medical-form textarea:focus,
+.medical-form select:focus {
+  border-color: #27ae60;
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+  outline: none;
 }
 
 .medical-form textarea {
   resize: vertical;
-  min-height: 80px;
+  min-height: clamp(80px, 20vw, 100px);
 }
 
+/* Enhanced Button */
 .medical-form button {
   background-color: #27ae60;
   color: white;
-  padding: 10px;
-  font-size: 16px;
+  padding: clamp(0.75rem, 2vw, 1rem);
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
   border: none;
   border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  min-height: 44px; /* Touch-friendly */
+  touch-action: manipulation;
+  margin-top: clamp(0.5rem, 1.5vw, 1rem);
 }
 
 .medical-form button:hover {
   background-color: #1e8449;
+  transform: translateY(-2px);
+}
+
+.medical-form button:active {
+  transform: translateY(0);
 }
 
 /* Report List */
 .no-reports {
   text-align: center;
   color: #777;
-  margin-top: 15px;
+  margin-top: clamp(1rem, 3vw, 1.5rem);
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  font-style: italic;
 }
 
 .report-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-top: 15px;
+  gap: clamp(1rem, 2vw, 1.6rem);
+  margin-top: clamp(1rem, 3vw, 1.5rem);
 }
 
 .report-card {
   background-color: #fff;
   color: #111;
-  padding: 12px 16px;
+  padding: clamp(0.75rem, 2vw, 1.2rem) clamp(1rem, 3vw, 1.6rem);
   border-radius: 8px;
   border-left: 4px solid #27ae60;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  box-sizing: border-box;
+}
+
+.report-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 768px) {
+  .medical-emergency-page {
+    padding: clamp(1.5rem, 4vw, 2rem) clamp(1rem, 2vw, 1.5rem);
+  }
+
+  .medical-emergency-container {
+    padding: clamp(1rem, 3vw, 1.5rem) clamp(1rem, 3vw, 1.5rem);
+    border-radius: 10px;
+  }
+
+  .title {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+    margin-bottom: clamp(0.75rem, 2vw, 1rem);
+  }
+
+  .sub-title {
+    margin-top: clamp(1rem, 3vw, 1.5rem);
+    font-size: clamp(1rem, 3vw, 1.1rem);
+    padding-bottom: clamp(0.2rem, 0.5vw, 0.25rem);
+  }
+
+  .medical-form {
+    gap: clamp(0.5rem, 1.5vw, 0.75rem);
+  }
+
+  .medical-form input,
+  .medical-form textarea,
+  .medical-form select {
+    padding: clamp(0.6rem, 1.5vw, 0.75rem) clamp(0.75rem, 2vw, 1rem);
+    font-size: clamp(0.8rem, 2vw, 0.875rem);
+  }
+
+  .medical-form textarea {
+    min-height: clamp(70px, 15vw, 80px);
+  }
+
+  .medical-form button {
+    font-size: clamp(0.8rem, 2vw, 0.875rem);
+    padding: clamp(0.6rem, 1.5vw, 0.75rem);
+    margin-top: clamp(0.4rem, 1vw, 0.5rem);
+  }
+
+  .report-list {
+    gap: clamp(0.75rem, 1.5vw, 1rem);
+    margin-top: clamp(0.75rem, 2vw, 1rem);
+  }
+
+  .report-card {
+    padding: clamp(0.6rem, 1.5vw, 0.75rem) clamp(0.75rem, 2vw, 1rem);
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .medical-emergency-page {
+    padding: clamp(1rem, 3vw, 1.5rem) clamp(0.75rem, 2vw, 1rem);
+  }
+
+  .medical-emergency-container {
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(0.75rem, 2vw, 1rem);
+    border-radius: 8px;
+  }
+
+  .title {
+    font-size: clamp(1.1rem, 4vw, 1.25rem);
+    margin-bottom: clamp(0.5rem, 1.5vw, 0.75rem);
+  }
+
+  .sub-title {
+    margin-top: clamp(0.75rem, 2vw, 1rem);
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    padding-bottom: clamp(0.15rem, 0.4vw, 0.2rem);
+  }
+
+  .medical-form {
+    gap: clamp(0.4rem, 1vw, 0.5rem);
+  }
+
+  .medical-form input,
+  .medical-form textarea,
+  .medical-form select {
+    padding: clamp(0.5rem, 1.5vw, 0.6rem) clamp(0.6rem, 1.5vw, 0.75rem);
+    font-size: clamp(0.75rem, 2vw, 0.8rem);
+  }
+
+  .medical-form textarea {
+    min-height: clamp(60px, 12vw, 70px);
+  }
+
+  .medical-form button {
+    font-size: clamp(0.75rem, 2vw, 0.8rem);
+    padding: clamp(0.5rem, 1.5vw, 0.6rem);
+    margin-top: clamp(0.25rem, 0.5vw, 0.4rem);
+  }
+
+  .no-reports {
+    margin-top: clamp(0.75rem, 2vw, 1rem);
+    font-size: clamp(0.8rem, 2vw, 0.875rem);
+  }
+
+  .report-list {
+    gap: clamp(0.6rem, 1.5vw, 0.75rem);
+    margin-top: clamp(0.6rem, 1.5vw, 0.75rem);
+  }
+
+  .report-card {
+    padding: clamp(0.5rem, 1vw, 0.6rem) clamp(0.6rem, 1vw, 0.75rem);
+    border-radius: 4px;
+  }
+}
+
+@media (max-width: 360px) {
+  .medical-emergency-page {
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(0.5rem, 1vw, 0.75rem);
+  }
+
+  .medical-emergency-container {
+    padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(0.5rem, 1.5vw, 0.75rem);
+  }
+
+  .title {
+    font-size: clamp(1rem, 4vw, 1.1rem);
+  }
+
+  .medical-form input,
+  .medical-form textarea,
+  .medical-form select {
+    padding: clamp(0.4rem, 1vw, 0.5rem) clamp(0.5rem, 1vw, 0.6rem);
+  }
+
+  .medical-form textarea {
+    min-height: clamp(50px, 10vw, 60px);
+  }
+
+  .medical-form button {
+    padding: clamp(0.4rem, 1vw, 0.5rem);
+  }
+
+  .report-card {
+    padding: clamp(0.4rem, 1vw, 0.5rem) clamp(0.5rem, 1vw, 0.6rem);
+  }
+}
+
+/* Touch-friendly enhancements */
+@media (hover: hover) {
+  .medical-form button:hover {
+    background-color: #1e8449;
+    transform: translateY(-2px);
+  }
+
+  .report-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+}
+
+/* Large screens optimization */
+@media (min-width: 1024px) {
+  .medical-emergency-container {
+    max-width: 700px;
+    padding: clamp(2rem, 4vw, 3rem) clamp(3rem, 5vw, 4rem);
+  }
+
+  .title {
+    font-size: clamp(1.8rem, 3vw, 2.2rem);
+  }
+
+  .sub-title {
+    font-size: clamp(1.3rem, 2.5vw, 1.5rem);
+  }
+
+  .report-card {
+    padding: clamp(1rem, 2vw, 1.5rem) clamp(1.5rem, 3vw, 2rem);
+  }
 }

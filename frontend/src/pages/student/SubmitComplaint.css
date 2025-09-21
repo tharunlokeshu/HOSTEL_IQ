@@ -73,3 +73,141 @@
   margin-top: 10px;
   font-weight: 500;
 }
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .submit-complaint-container {
+    padding: 15px;
+    min-height: 70vh;
+  }
+
+  .submit-complaint-form {
+    padding: 25px 20px;
+    max-width: 95%;
+    border-radius: 10px;
+  }
+
+  .submit-complaint-form h2 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    margin-bottom: 20px;
+  }
+
+  .submit-complaint-form input,
+  .submit-complaint-form textarea,
+  .submit-complaint-form select {
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    font-size: 16px; /* Prevents zoom on iOS */
+    border-radius: 6px;
+  }
+
+  .submit-complaint-form textarea {
+    min-height: 80px;
+  }
+
+  .submit-complaint-form button {
+    padding: 10px;
+    font-size: 15px;
+    min-height: 44px; /* Touch-friendly */
+    border-radius: 6px;
+  }
+
+  .submit-complaint-form .success,
+  .submit-complaint-form .error {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .submit-complaint-container {
+    padding: 10px;
+    min-height: 60vh;
+  }
+
+  .submit-complaint-form {
+    padding: 20px 15px;
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  .submit-complaint-form h2 {
+    font-size: clamp(1.3rem, 8vw, 1.8rem);
+    margin-bottom: 15px;
+  }
+
+  .submit-complaint-form input,
+  .submit-complaint-form textarea,
+  .submit-complaint-form select {
+    padding: 8px 10px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+
+  .submit-complaint-form textarea {
+    min-height: 70px;
+  }
+
+  .submit-complaint-form button {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+
+  .submit-complaint-form .success,
+  .submit-complaint-form .error {
+    font-size: 13px;
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 360px) {
+  .submit-complaint-form {
+    padding: 15px 12px;
+  }
+
+  .submit-complaint-form h2 {
+    font-size: clamp(1.2rem, 10vw, 1.5rem);
+  }
+
+  .submit-complaint-form input,
+  .submit-complaint-form textarea,
+  .submit-complaint-form select {
+    padding: 6px 8px;
+    margin-bottom: 10px;
+  }
+
+  .submit-complaint-form textarea {
+    min-height: 60px;
+  }
+
+  .submit-complaint-form button {
+    padding: 6px;
+    font-size: 13px;
+  }
+}
+
+/* Large screens optimization */
+@media (min-width: 1024px) {
+  .submit-complaint-form {
+    max-width: 550px;
+    padding: 50px 45px;
+  }
+
+  .submit-complaint-form h2 {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+  }
+
+  .submit-complaint-form input,
+  .submit-complaint-form textarea,
+  .submit-complaint-form select {
+    padding: 14px 18px;
+    font-size: 16px;
+  }
+
+  .submit-complaint-form button {
+    padding: 14px;
+    font-size: 17px;
+  }
+}

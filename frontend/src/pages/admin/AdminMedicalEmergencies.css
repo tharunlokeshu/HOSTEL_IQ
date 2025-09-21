@@ -18,28 +18,34 @@ body {
   background: transparent;
   color: var(--text-black);
   min-height: 100vh;
-  padding: 2rem;
+  padding: clamp(1rem, 4vw, 2rem);
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 /* Title */
 .admin-emergencies-title {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
   color: var(--text-black);
   text-shadow: none;
+  text-align: center;
 }
 
 /* Emergency Card */
 .admin-emergency-card {
   background: transparent;
   border: 1px solid var(--border);
-  padding: 1.5rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
   border-radius: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
   color: var(--text-black);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .admin-emergency-card:hover {
@@ -58,14 +64,18 @@ body {
 
 /* Status select */
 .admin-status-select {
-  padding: 0.5rem 1rem;
+  padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
   border-radius: 0.5rem;
   border: 1px solid var(--border);
   background: transparent;
   color: var(--text-black);
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
   outline: none;
   transition: border 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 44px; /* Touch-friendly */
+  touch-action: manipulation;
 }
 
 .admin-status-select:focus {
@@ -79,4 +89,49 @@ body {
   background: transparent !important;
   font-weight: 500;
   margin-bottom: 1rem;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+}
+
+/* Responsive grid for cards */
+.emergencies-grid {
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 480px) {
+  .emergencies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .emergencies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+}
+
+/* Touch-friendly hover effects */
+@media (hover: hover) {
+  .admin-emergency-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Mobile-first responsive adjustments */
+@media (max-width: 479px) {
+  .admin-emergencies-container {
+    padding: 1rem 0.75rem;
+  }
+
+  .admin-emergencies-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .admin-emergency-card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
 }
