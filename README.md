@@ -4,7 +4,7 @@ A **next-gen full-stack hostel helpdesk system** built with Django, React, and M
 
 ## 🌐 Live Demo
 
-[🚀 Visit Live Demo](https://hostel-iq.onrender.com)
+[🚀 Visit Live Demo](https://hostel-iq.vercel.app)
 
 ---
 ## 📸 UI Screenshots
