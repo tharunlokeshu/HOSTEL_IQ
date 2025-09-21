@@ -5,7 +5,7 @@ import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
 import StudentDashboard from './pages/student/StudentDashboard';
 import AdminDashboard from './pages/admin/AdminDashboard';
-import AdminViewComplaints from './pages/admin/AdminViewComplaints'; 
+import AdminViewComplaints from './pages/admin/AdminViewComplaints';
 import FoodFeedback from './pages/admin/FoodFeedback';
 import SubmitComplaint from './pages/student/SubmitComplaint';
 import MyComplaints from './pages/student/MyComplaints';
@@ -26,6 +26,7 @@ import AdminLostAndFound from './pages/admin/AdminLostAndFound';
 import DashboardAnalytics from './pages/admin/DashboardAnalytics';
 import HostelRooms from './pages/admin/HostelRooms';
 import AdminExportReports from './pages/admin/AdminExportReports';
+import NotFound from './pages/NotFound';
 // Ensure this path is correct
 function App() {
   return (
@@ -39,7 +40,7 @@ function App() {
 
         {/* Optional: Duplicate dashboard path based on role */}
         <Route path="/dashboard" element={<RoleBasedRedirect />} />
-        
+
         <Route path="/admin/view-complaints" element={<AdminViewComplaints />} />
         <Route path="/admin/food-feedback" element={<FoodFeedback />} />
          <Route path="/student/submit-complaint" element={<SubmitComplaint />} />
@@ -63,7 +64,7 @@ function App() {
         <Route path="/admin/export-reports" element={<AdminExportReports />} />
 
         {/* Catch-all route for SPA - this handles direct URL access and page refreshes */}
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
@@ -81,4 +82,3 @@ function RoleBasedRedirect() {
 }
 
 export default App;
-
