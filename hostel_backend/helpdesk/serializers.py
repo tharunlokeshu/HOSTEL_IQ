@@ -29,13 +29,13 @@ class MessFeedbackSerializer(serializers.ModelSerializer):
 
 
 class OutPassRequestSerializer(serializers.ModelSerializer):
-    student_name = serializers.CharField(source='student.full_name', read_only=True)
+    student_name = serializers.CharField(source='student.username', read_only=True)
     roll_number = serializers.CharField(source='student.roll_number', read_only=True)
 
     class Meta:
         model = OutPassRequest
         fields = '__all__'
-        read_only_fields = ['student', 'created_at']  # Removed 'status'
+        read_only_fields = ['student', 'created_at']
 
 
 

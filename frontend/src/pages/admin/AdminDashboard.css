@@ -100,6 +100,7 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+
 .dashboard-heading {
   font-size: 4rem;           /* Bigger heading text */
   font-weight: 800;
@@ -107,103 +108,4 @@
   margin-bottom: 3.5rem;
   color: #00eaff;
   text-shadow: 0 4px 15px rgba(0, 217, 255, 0.5);
-}
-
-/* ===== Responsive Design ===== */
-@media (max-width: 768px) {
-  .admin-dashboard {
-    padding: 2rem 1rem;
-  }
-
-  .dashboard-heading {
-    font-size: clamp(1.5rem, 8vw, 2.5rem);
-    margin-bottom: 2rem;
-    letter-spacing: 0.5px;
-  }
-
-  .card-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .card {
-    padding: 1.5rem 1rem;
-    border-radius: 15px;
-  }
-
-  .card span {
-    font-size: 1rem;
-  }
-
-  .card svg {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .admin-dashboard {
-    padding: 1.5rem 0.5rem;
-  }
-
-  .dashboard-heading {
-    font-size: clamp(1.3rem, 10vw, 2rem);
-    margin-bottom: 1.5rem;
-    text-align: center;
-  }
-
-  .card-grid {
-    gap: 1rem;
-  }
-
-  .card {
-    padding: 1rem 0.75rem;
-    border-radius: 12px;
-  }
-
-  .card span {
-    font-size: 0.9rem;
-  }
-
-  .card svg {
-    font-size: 1.8rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .admin-dashboard {
-    padding: 1rem 0.5rem;
-  }
-
-  .dashboard-heading {
-    font-size: clamp(1.2rem, 12vw, 1.8rem);
-    margin-bottom: 1rem;
-  }
-
-  .card {
-    padding: 0.75rem 0.5rem;
-  }
-
-  .card span {
-    font-size: 0.85rem;
-  }
-
-  .card svg {
-    font-size: 1.5rem;
-  }
-}
-
-/* Large screens optimization */
-@media (min-width: 1200px) {
-  .card-grid {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2.5rem;
-  }
-
-  .card {
-    padding: 2.5rem 1.5rem;
-  }
-
-  .card svg {
-    font-size: 3rem;
-  }
 }

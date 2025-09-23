@@ -51,12 +51,6 @@ class OutPassRequest(models.Model):
 
     student = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     name = models.CharField(max_length=100, null=True, blank=True)
-# or
-    name = models.CharField(max_length=100, default='')
-    roll_number = models.CharField(max_length=20, null=True, blank=True)
-# or
-    roll_number = models.CharField(max_length=20, default='')
-    roll_number = models.CharField(max_length=20)
     reason = models.TextField()
     destination = models.CharField(max_length=255)
     from_date = models.DateField()
@@ -65,7 +59,7 @@ class OutPassRequest(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.student.full_name} - {self.status}"
+        return f"{self.student.username} - {self.status}"
 
 
 

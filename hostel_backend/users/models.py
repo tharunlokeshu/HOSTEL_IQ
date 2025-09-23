@@ -29,6 +29,7 @@ class CustomUserManager(BaseUserManager):
 # Custom User Model
 class CustomUser(AbstractUser):
     is_admin = models.BooleanField(default=False)
+    roll_number = models.CharField(max_length=20, blank=True, null=True)
 
     objects = CustomUserManager()
 

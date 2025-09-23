@@ -20,7 +20,7 @@ const StudentProfile = () => {
     const fetchProfile = async () => {
       try {
         const res = await axios.get(
-          'http://127.0.0.1:8000/api/student/me/', // Localhost URL
+          'https://pragati-hostel.onrender.com/api/student/me/', // Localhost URL
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setProfile({
@@ -30,7 +30,7 @@ const StudentProfile = () => {
           room: res.data.room_number || '',
           department: res.data.department || '',
           image: null,
-          imagePreview: res.data.image ? `http://127.0.0.1:8000${res.data.image}` : '', // Localhost for images
+          imagePreview: res.data.image ? `https://pragati-hostel.onrender.com${res.data.image}` : '', // Localhost for images
         });
       } catch (err) {
         console.error('Error fetching profile:', err);
@@ -64,7 +64,7 @@ const StudentProfile = () => {
       }
 
       await axios.put(
-        'http://127.0.0.1:8000/api/student/me/', // Localhost URL
+        'https://pragati-hostel.onrender.com/api/student/me/', // Localhost URL
         formData,
         {
           headers: { 

@@ -110,7 +110,6 @@ def submit_complaint_anonymous(request):
 
 
 
-
 # ✅ 👨‍🎓 Student: View My Complaints
 class MyComplaintsView(generics.ListAPIView):
     serializer_class = ComplaintSerializer
@@ -205,7 +204,47 @@ class OutPassRequestCreateView(generics.CreateAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def perform_create(self, serializer):
-        serializer.save(student=self.request.user)
+        from django.db import transaction
+
+        # Debug: Print all request data
+        print(f"DEBUG: All request data: {self.request.data}")
+        print(f"DEBUG: Request data type: {type(self.request.data)}")
+
+        # Get the roll_number from the request data
+        roll_number = self.request.data.get('roll_number')
+        print(f"DEBUG: Roll number from request: '{roll_number}'")
+        print(f"DEBUG: Roll number type: {type(roll_number)}")
+
+        try:
+            with transaction.atomic():
+                # Save the roll_number to the user's profile if provided
+                if roll_number and roll_number.strip():
+                    print(f"DEBUG: Saving roll_number '{roll_number.strip()}' to user {self.request.user.username}")
+                    print(f"DEBUG: User roll_number before save: {self.request.user.roll_number}")
+                    self.request.user.roll_number = roll_number.strip()
+                    self.request.user.save(update_fields=['roll_number'])
+                    print(f"DEBUG: User roll_number after save: {self.request.user.roll_number}")
+
+                    # Verify the save worked
+                    self.request.user.refresh_from_db()
+                    print(f"DEBUG: User roll_number after refresh: {self.request.user.roll_number}")
+                else:
+                    print(f"DEBUG: Roll number is empty or None")
+
+                # Save the outpass request
+                outpass_request = serializer.save(student=self.request.user)
+                print(f"DEBUG: Outpass request saved with ID: {outpass_request.id}")
+                print(f"DEBUG: Outpass request student roll_number: {outpass_request.student.roll_number}")
+
+                # Also check the serializer data
+                serializer_data = serializer.data
+                print(f"DEBUG: Serializer data roll_number: {serializer_data.get('roll_number')}")
+        except Exception as e:
+            # Log the error for debugging
+            print(f"Error saving outpass request: {str(e)}")
+            print(f"Roll number: {roll_number}")
+            print(f"User: {self.request.user.username}")
+            raise
 
 class OutPassRequestListView(generics.ListAPIView):
     queryset = OutPassRequest.objects.all().order_by('-created_at')
@@ -499,8 +538,3 @@ class AdminLostFoundUpdateView(generics.RetrieveUpdateAPIView):
     queryset = LostFound.objects.all()
     serializer_class = LostFoundSerializer
     permission_classes = [permissions.IsAuthenticated]
-    
-    
-    
-    
-   

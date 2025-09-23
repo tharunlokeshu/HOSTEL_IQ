@@ -6,6 +6,7 @@ import "./OutPass.css";
 const SubmitOutPass = () => {
   const [formData, setFormData] = useState({
     name: "",
+    roll_number: "",
     reason: "",
     destination: "",
     from_date: "",
@@ -88,6 +89,7 @@ const SubmitOutPass = () => {
         setMessage("✅ Out Pass submitted successfully!");
         setFormData({
           name: "",
+          roll_number: "",
           reason: "",
           destination: "",
           from_date: "",
@@ -111,6 +113,15 @@ const SubmitOutPass = () => {
           placeholder="Your Full Name"
           className="form-input"
           value={formData.name}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="text"
+          name="roll_number"
+          placeholder="Your Roll Number"
+          className="form-input"
+          value={formData.roll_number}
           onChange={handleChange}
           required
         />
@@ -180,6 +191,7 @@ const SubmitOutPass = () => {
                 pass.status === "approved"
                   ? `🏫 Pragati Hostel Out Pass\n\n` +
                     `👤 Name       : ${pass.name}\n` +
+                    `🔢 Roll No    : ${pass.roll_number}\n` +
                     `📝 Reason     : ${pass.reason}\n` +
                     `📍 Destination: ${pass.destination}\n` +
                     `📅 From       : ${pass.from_date}\n` +

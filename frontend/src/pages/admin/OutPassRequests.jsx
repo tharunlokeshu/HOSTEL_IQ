@@ -13,7 +13,7 @@ const AdminOutPassRequests = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://pragati-hostel.onrender.com/api/helpdesk/out-pass/all/",
+        "https://pragati-hostel.onrender.com/api/helpdesk/out-pass/",
         {
           headers: { Authorization: `Bearer ${accessToken}` },
         }
@@ -103,6 +103,7 @@ const AdminOutPassRequests = () => {
               <tr>
                 <th>ID</th>
                 <th>Student</th>
+                <th>Roll No</th>
                 <th>Reason</th>
                 <th>Destination</th>
                 <th>From</th>
@@ -124,6 +125,7 @@ const AdminOutPassRequests = () => {
                   <tr key={req.id} className="admin-row">
                     <td>{req.id}</td>
                     <td>{req.name || "N/A"}</td>
+                    <td>{req.roll_number || "N/A"}</td>
                     <td>{req.reason}</td>
                     <td>{req.destination}</td>
                     <td>{req.from_date}</td>
