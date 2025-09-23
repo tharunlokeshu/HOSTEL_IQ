@@ -13,7 +13,7 @@ const AdminOutPassRequests = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://pragati-hostel.onrender.com/api/helpdesk/out-pass/",
+        "https://pragati-hostel.onrender.com/api/helpdesk/out-pass/all/",
         {
           headers: { Authorization: `Bearer ${accessToken}` },
         }
